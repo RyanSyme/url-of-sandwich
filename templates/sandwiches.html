@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>I'm part of the problem</h2>
-
     {% for sandwich in sandwiches %}
         {{ sandwich.sandwich_name }}<br>
         {{ sandwich.main_ingredient }}<br>
