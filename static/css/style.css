@@ -1,0 +1,48 @@
+
+/* =============================== Nav Section =============================== */
+nav {
+    height: 55px;
+    background-color: #9fd9de;
+}
+
+nav a {
+    color: #2b2d42;
+}
+
+.navbar-brand img {
+    vertical-align: baseline;
+}
+
+.nav-link {
+    font-weight: 600;
+    padding: 0 10px 0 10px;
+    margin-bottom: 2px;
+    margin-top: 6px;
+    line-height: 5px;
+    color: #993300;
+}
+
+.nav-link:hover {
+    color: #2b2d42;
+}
+
+.nav-text-align {
+    text-align: end;
+}
+
+.navbar-toggler-icon i {
+    color: #993300;
+    font-size: 25px;
+    height: 25px;
+    width: 25px;
+}
+
+#navbarNavDropdown {
+    background-color: #9fd9de;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.navbar button:focus {
+    outline: none;
+}
