@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandwiches</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
+    <h2>I'm part of the problem</h2>
+
     {% for sandwich in sandwiches %}
         {{ sandwich.sandwich_name }}<br>
         {{ sandwich.main_ingredient }}<br>
@@ -16,5 +13,4 @@
         {{ sandwich.image_url }}<br>
         {{ sandwich.created_by }}<br>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
