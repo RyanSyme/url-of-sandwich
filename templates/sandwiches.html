@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwiches</title>
+</head>
+<body>
+    {% for sandwich in sandwiches %}
+        {{ sandwich.sandwich_name }}<br>
+        {{ sandwich.main_ingredient }}<br>
+        {{ sandwich.prep_time }}<br>
+        {{ sandwich.description }}<br>
+        {{ sandwich.ingredients }}<br>
+        {{ sandwich.instructions }}<br>
+        {{ sandwich.sandwich_name }}<br>
+        {{ sandwich.img_url }}<br>
+        {{ sandwich.created_by }}<br>
+    {% endfor %}
+</body>
+</html>
