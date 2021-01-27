@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background-color: #e6e6e6;
+    text-align: center;
+}
 
 /* =============================== Nav Section =============================== */
 nav {
     height: 55px;
     background-color: #9fd9de;
+}
+
+.nav-symbol h3 {
+    font-weight: 700 !important;
 }
 
 nav a {
@@ -45,4 +56,17 @@ nav a {
 
 .navbar button:focus {
     outline: none;
+}
+
+/* =============================== SignUp Section =============================== */
+
+.signup-form {
+    background-color: #9fd9de;
+    color: #2b2d42;
+    font-size: 1.2rem;
+}
+
+.btn {
+    background-color: #2b2d42;
+    color: #ffffff;
 }

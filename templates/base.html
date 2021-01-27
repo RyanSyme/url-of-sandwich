@@ -12,17 +12,17 @@
 </head>
 <body>
     <header>
-         <nav class="navbar navbar-expand-md fixed-top container-fluid">
-            <a class="nav-symbol" href="{{ url_for('get_sandwiches') }}"><h3>Url of Sandwich</h3></a>
+         <nav class="navbar navbar-expand-md container-fluid">
+            <a class="nav-symbol mt-1" href="{{ url_for('sandwiches') }}"><h3>Url of Sandwich</h3></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fas fa-bars"></i>
                 </span>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+            <div class="collapse navbar-collapse justify-content-end mt-1" id="navbarNavDropdown">
                 <ul class="navbar-nav nav-text-align">
                     <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="{{ url_for('get_sandwiches') }}">HOME</a>
+                        <a class="nav-link text-uppercase" href="{{ url_for('sandwiches') }}">HOME</a>
                     </li>
                     <li class="nav-item mr-3 mb-2">
                         <a class="nav-link text-uppercase" href="#">SANDWICHES</a>
@@ -31,10 +31,13 @@
                         <a class="nav-link text-uppercase" href="#">ADD SANDWICH</a>
                     </li>
                     <li class="nav-item mr-3 mb-2">
+                        <a class="nav-link text-uppercase" href="{{ url_for('signup') }}">SIGN UP</a>
+                    </li>
+                    <li class="nav-item mr-3 mb-2">
                         <a class="nav-link text-uppercase" href="#">PROFILE</a>
                     </li>
                     <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="#">LOGIN/SIGN UP</a>
+                        <a class="nav-link text-uppercase" href="#">LOGIN</a>
                     </li>
                     <li class="nav-item mr-3 mb-2">
                         <a class="nav-link text-uppercase" href="#">LOG OUT</a>
