@@ -9,22 +9,22 @@
                     <label for="username" class="form-label">
                         <i class="fas fa-user-plus ml-2"></i> Username
                     </label>
-                    <input type="text" class="form-control" id="username" name="username" required>
+                    <input class="form-control" type="text" id="username" name="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Please use between 5-15 characters. Letters and Numbers only" required>
                 </div>
                 <div class="m-3">
                     <label for="email" class="form-label">
                         <i class="fas fa-at ml-2"></i> Email address
                     </label>
-                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="text-muted">We'll never share your email with anyone else.</small>
+                    <input class="form-control" type="email" id="email" name="email" required>
                 </div>
-                <div class="ml-3 mr-3 mb-3">
+                <div class="m-3">
                     <label for="password" class="form-label">
                         <i class="fas fa-lock ml-2"></i> Password
                     </label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input class="form-control" type="password" id="password" name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Please use letters and numbers only" required>
                 </div>
                 <button type="submit" class="btn m-3 btn-signup">Sign Up</button>
+                 <small id="emailHelp" class="text-muted text-center">Already a member? Login Here.</small>
             </form>
         </div>
     </div>

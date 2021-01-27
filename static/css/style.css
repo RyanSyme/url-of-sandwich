@@ -72,9 +72,19 @@ nav a {
 .btn:hover {
     color: #9fd9de;
 }
+
+/* =============================== SignUp Section ============================ */
+
+.flashes h4 {
+    line-height: 3;
+    background-color: #2b2d42;
+    color: #9fd9de;
+}
+
 /* =============================== SignUp Section ============================ */
 
 .signup-form {
     background-color: #9fd9de;
     font-size: 1.25rem;
 }
+
