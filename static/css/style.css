@@ -7,6 +7,10 @@ body {
     text-align: center;
 }
 
+a {
+    text-decoration: none !important;
+}
+
 /* =============================== Nav Section =============================== */
 nav {
     height: 55px;
@@ -21,7 +25,6 @@ nav {
 
 nav a {
     color: #2b2d42;
-    text-decoration: none !important;
 }
 
 .navbar-brand img {
@@ -88,3 +91,10 @@ nav a {
     font-size: 1.25rem;
 }
 
+.signup-login {
+    color: #993300;
+}
+
+.signup-login:hover {
+    color: #2b2d42;
+}
