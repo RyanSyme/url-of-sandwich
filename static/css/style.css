@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Comic Neue', cursive;
+    color: #2b2d42;
     background-color: #e6e6e6;
     text-align: center;
 }
@@ -13,11 +14,14 @@ nav {
 }
 
 .nav-symbol h3 {
+    font-size: 2.25rem;
     font-weight: 700 !important;
+    color: #2b2d42;
 }
 
 nav a {
     color: #2b2d42;
+    text-decoration: none !important;
 }
 
 .navbar-brand img {
@@ -57,16 +61,20 @@ nav a {
 .navbar button:focus {
     outline: none;
 }
-
-/* =============================== SignUp Section =============================== */
-
-.signup-form {
-    background-color: #9fd9de;
-    color: #2b2d42;
-    font-size: 1.2rem;
-}
+/* =============================== Buttons =================================== */
 
 .btn {
     background-color: #2b2d42;
     color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.btn:hover {
+    color: #9fd9de;
+}
+/* =============================== SignUp Section ============================ */
+
+.signup-form {
+    background-color: #9fd9de;
+    font-size: 1.25rem;
 }
