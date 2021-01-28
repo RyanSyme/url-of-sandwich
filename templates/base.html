@@ -25,7 +25,7 @@
                         <a class="nav-link text-uppercase" href="{{ url_for('sandwiches') }}">HOME</a>
                     </li>
                     <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="#">SANDWICHES</a>
+                        <a class="nav-link text-uppercase" href="{{ url_for('sandwiches') }}">SANDWICHES</a>
                     </li>
                     {% if session.user %}
                         <li class="nav-item mr-3 mb-2">

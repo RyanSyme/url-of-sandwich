@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/sandwiches")
 def sandwiches():
-    sandwiches = mongo.db.sandwiches.find()
+    sandwiches = list(mongo.db.sandwiches.find())
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
