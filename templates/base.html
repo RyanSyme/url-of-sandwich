@@ -29,7 +29,7 @@
                     </li>
                     {% if session.user %}
                         <li class="nav-item mr-3 mb-2">
-                            <a class="nav-link text-uppercase" href="#">ADD SANDWICH</a>
+                            <a class="nav-link text-uppercase" href="{{ url_for('add_sandwich') }}">ADD SANDWICH</a>
                         </li>
                         <li class="nav-item mr-3 mb-2">
                             <a class="nav-link text-uppercase" href="{{ url_for('profile', username=session['user']) }}">PROFILE</a>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form class="card mt-5 text-left">
+                <div class="col-12">
+                    <h3 class="text-center">Add Sandwich</h3>
+                </div>
+                <div class="m-3">
+                    <label class="form-label">
+                        <i class="fas fa-bread-slice"></i> Sandwich Name
+                    </label>
+                    <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
+                </div>
+                <div class="m-3">
+                    <label class="form-label">
+                        <i class="fas fa-cheese"></i> Sandwich Category
+                    </label>
+                    <input class="form-control" type="text" id="sandwich_category" name="sandwich_category" minlength="5" maxlength="50" required>
+                </div>
+                <div class="m-3">
+                    <label class="form-label">
+                        <i class="fas fa-bacon"></i> Ingredients
+                    </label>
+                    <textarea class="form-control" type="text" id="ingredients" name="ingredients" rows="2" minlength="5" placeholder="Please include main ingredient" required></textarea>
+                </div>
+                <div class="m-3">
+                    <label class="form-label">
+                        <i class="fas fa-clipboard-list"></i> Instructions
+                    </label>
+                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" required></textarea>
+                </div>
+                <div class="m-3">
+                    <label class="form-label">
+                        <i class="fas fa-camera"></i> Image URL
+                    </label>
+                    <input class="form-control" type="url" id="image_url" name="image_url">
+                </div>
+                <button type="submit" class="btn m-3 btn-signup">Create Sandwich</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
