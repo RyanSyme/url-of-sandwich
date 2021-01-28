@@ -27,21 +27,24 @@
                     <li class="nav-item mr-3 mb-2">
                         <a class="nav-link text-uppercase" href="#">SANDWICHES</a>
                     </li>
-                    <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="#">ADD SANDWICH</a>
-                    </li>
-                    <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="{{ url_for('profile', username=session['user']) }}">PROFILE</a>
-                    </li>
-                    <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="#">LOG OUT</a>
-                    </li>
-                    <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="{{ url_for('login') }}">LOGIN</a>
-                    </li>
-                    <li class="nav-item mr-3 mb-2">
-                        <a class="nav-link text-uppercase" href="{{ url_for('signup') }}">SIGN UP</a>
-                    </li>
+                    {% if session.user %}
+                        <li class="nav-item mr-3 mb-2">
+                            <a class="nav-link text-uppercase" href="#">ADD SANDWICH</a>
+                        </li>
+                        <li class="nav-item mr-3 mb-2">
+                            <a class="nav-link text-uppercase" href="{{ url_for('profile', username=session['user']) }}">PROFILE</a>
+                        </li>
+                        <li class="nav-item mr-3 mb-2">
+                            <a class="nav-link text-uppercase" href="{{ url_for('logout') }}">LOG OUT</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item mr-3 mb-2">
+                            <a class="nav-link text-uppercase" href="{{ url_for('login') }}">LOGIN</a>
+                        </li>
+                        <li class="nav-item mr-3 mb-2">
+                            <a class="nav-link text-uppercase" href="{{ url_for('signup') }}">SIGN UP</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

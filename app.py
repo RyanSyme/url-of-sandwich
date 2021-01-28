@@ -63,7 +63,8 @@ def login():
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
                         flash("Welcome, {}".format(request.form.get("username")))
-                        return redirect(url_for("profile", username=session["user"]))
+                        return redirect(
+                            url_for("profile", username=session["user"]))
             else:
                 # Wrong password
                 flash("Incorrect Username and/or Password")
@@ -80,8 +81,21 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # retreive session user's username from database
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
+
+
+@app.route("/logout")
+def logout():
+    # remove session cookies
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
