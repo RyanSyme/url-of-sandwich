@@ -5,28 +5,25 @@
         <div class="col-md-6 offset-md-3">
             <form class="card mt-5 text-left">
                 <div class="col-12">
-                    <h3 class="text-center">Add Sandwich</h3>
+                    <h3 class="text-center">Add a Sandwich</h3>
                 </div>
                 <div class="m-3">
-                    <label class="form-label">
+                    <label class="form-label" for="sandwich_name">
                         <i class="fas fa-bread-slice"></i> Sandwich Name
                     </label>
                     <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
                 </div>
                 <div class="row m-3">
                 <div class="col-8">
-                    <label class="form-label">
+                    <label class="form-label" for="category">
                         <i class="fas fa-cheese"></i> Sandwich Category
                     </label>
-                    <select class="form-select select-box" aria-label="form-select" required>
-                    <option selected>--- Choose a Category ---</option>
-                    <option value="beef">Beef</option>
-                    <option value="chicken">Chicken</option>
-                    <option value="pork">Pork</option>
-                    <option value="seafood">Seafood</option>
-                    <option value="vegetable">Vegetable</option>
-                    <option value="other">Other</option>
-                </select>
+                    <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
+                        <option selected>-- Choose a Category --</option>
+                        {% for category in category %}
+                            <option value="{{ category.category }}">{{ category.category }}</option>
+                        {% endfor %}
+                    </select>
                 </div>
                 <div class="col-4">
                     <label class="form-label">

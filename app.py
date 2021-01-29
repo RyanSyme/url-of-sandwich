@@ -100,7 +100,8 @@ def logout():
 
 @app.route("/add_sandwich")
 def add_sandwich():
-    return render_template("add_sandwich.html")
+    category = mongo.db.category.find()
+    return render_template("add_sandwich.html", category=category)
 
 
 if __name__ == "__main__":
