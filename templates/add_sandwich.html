@@ -13,11 +13,27 @@
                     </label>
                     <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
                 </div>
-                <div class="m-3">
+                <div class="row m-3">
+                <div class="col-8">
                     <label class="form-label">
                         <i class="fas fa-cheese"></i> Sandwich Category
                     </label>
-                    <input class="form-control" type="text" id="sandwich_category" name="sandwich_category" minlength="5" maxlength="50" required>
+                    <select class="form-select select-box" aria-label="form-select" required>
+                    <option selected>--- Choose a Category ---</option>
+                    <option value="beef">Beef</option>
+                    <option value="chicken">Chicken</option>
+                    <option value="pork">Pork</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="vegetable">Vegetable</option>
+                    <option value="other">Other</option>
+                </select>
+                </div>
+                <div class="col-4">
+                    <label class="form-label">
+                        <i class="fas fa-clock"></i> Prep Time
+                    </label>
+                    <input class="form-control" type="number" id="prep_time" name="prep_time" required>
+                </div>
                 </div>
                 <div class="m-3">
                     <label class="form-label">

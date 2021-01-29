@@ -76,7 +76,7 @@ nav a {
     color: #9fd9de;
 }
 
-/* =============================== SignUp Section ============================ */
+/* =============================== Base Section ============================== */
 
 .flashes h4 {
     line-height: 3;
@@ -97,4 +97,11 @@ nav a {
 
 .signup-login:hover {
     color: #2b2d42;
+}
+
+/* =============================== Add_Sandwich Section ====================== */
+
+.select-box {
+    height: 2.4rem !important;
+    margin-left: -10px;
 }
