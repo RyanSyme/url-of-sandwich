@@ -98,8 +98,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_sandwich")
+@app.route("/add_sandwich", methods=["GET", "POST"])
 def add_sandwich():
+    if request.method == "POST":
+        sandwiches = {
+            "sandwich_name": request.form.get("sandwich_name"),
+            "description": request.form.get("description"),
+            "category": request.form.get("category"),
+            "prep_time": request.form.get("prep_time") + " min",
+            "ingredients": request.form.getlist("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.sandwiches.insert_one(sandwiches)
+        flash("Sandwich successfully added")
+        return redirect(url_for("sandwiches"))
+
     category = mongo.db.category.find()
     return render_template("add_sandwich.html", category=category)
 
