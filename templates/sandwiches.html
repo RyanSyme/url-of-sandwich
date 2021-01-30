@@ -12,7 +12,7 @@
                         <p class="card-text">{{ sandwich.prep_time }}</p>
                         <p class="card-text">Created by: {{ sandwich.created_by }}</p>
                         <a href="#" class="btn btn-done">Done</a>
-                        <a href="#" class="btn btn-edit">Edit</a>
+                        <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-edit">Edit</a>
                     </div>
                 </div>
             </div>

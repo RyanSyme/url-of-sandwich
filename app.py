@@ -119,6 +119,14 @@ def add_sandwich():
     return render_template("add_sandwich.html", category=category)
 
 
+@app.route("/edit_sandwich/<sandwich_id>", methods=["GET", "POST"])
+def edit_sandwich(sandwich_id):
+    sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
+    category = mongo.db.category.find()
+    return render_template(
+        "edit_sandwich.html", sandwich=sandwich, category=category)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

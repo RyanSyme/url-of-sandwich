@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form class="card mt-5 text-left" method="POST" action="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}">
+                <div class="col-12">
+                    <h3 class="text-center">Edit Sandwich</h3>
+                </div>
+                <div class="m-2">
+                    <label class="form-label" for="sandwich_name">
+                        <i class="fas fa-bread-slice"></i> Sandwich Name
+                    </label>
+                    <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
+                </div>
+                <div class="m-2">
+                    <label class="form-label">
+                        <i class="fas fa-clipboard-list"></i> Description
+                    </label>
+                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
+                </div>
+                <div class="row m-2">
+                <div class="col-8">
+                    <label class="form-label" for="category">
+                        <i class="fas fa-cheese"></i> Sandwich Category
+                    </label>
+                    <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
+                        <option value="" selected>-- Choose a Category --</option>
+                        {% for category in category %}
+                            <option value="{{ category.category }}">{{ category.category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label class="form-label">
+                        <i class="fas fa-clock"></i> Prep Time
+                    </label>
+                    <input class="form-control" type="number" id="prep_time" name="prep_time" required>
+                </div>
+                </div>
+                <div class="m-2">
+                    <label class="form-label">
+                        <i class="fas fa-bacon"></i> Ingredients
+                    </label>
+                    <input class="form-control" type="text" id="ingredients" name="ingredients" minlength="5" placeholder="Please include main ingredient" required>
+                </div>
+                <div class="m-2">
+                    <label class="form-label">
+                        <i class="fas fa-clipboard-list"></i> Instructions
+                    </label>
+                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" required></textarea>
+                </div>
+                <div class="m-2">
+                    <label class="form-label">
+                        <i class="fas fa-camera"></i> Image URL
+                    </label>
+                    <input class="form-control" type="url" id="image_url" name="image_url">
+                </div>
+                <button type="submit" class="btn m-3 btn-signup">Edit Sandwich</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
