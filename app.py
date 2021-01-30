@@ -112,7 +112,7 @@ def add_sandwich():
             "created_by": session["user"]
         }
         mongo.db.sandwiches.insert_one(sandwiches)
-        flash("Sandwich successfully added")
+        flash("Sandwich Successfully Added")
         return redirect(url_for("sandwiches"))
 
     category = mongo.db.category.find()
@@ -121,6 +121,21 @@ def add_sandwich():
 
 @app.route("/edit_sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
+    if request.method == "POST":
+        submit = {
+            "sandwich_name": request.form.get("sandwich_name"),
+            "description": request.form.get("description"),
+            "category": request.form.get("category"),
+            "prep_time": request.form.get("prep_time"),
+            "ingredients": request.form.get("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.sandwiches.update({"_id": ObjectId(sandwich_id)}, submit)
+        flash("Sandwich Successfully Updated")
+        return redirect(url_for("sandwiches"))
+
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     category = mongo.db.category.find()
     return render_template(

@@ -11,8 +11,10 @@
                         <p class="card-text">{{ sandwich.category }}</p>
                         <p class="card-text">{{ sandwich.prep_time }}</p>
                         <p class="card-text">Created by: {{ sandwich.created_by }}</p>
+                        {% if session.user|lower == sandwich.created_by|lower %}
                         <a href="#" class="btn btn-done">Done</a>
                         <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-edit">Edit</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
