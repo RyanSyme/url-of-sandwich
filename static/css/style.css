@@ -67,9 +67,12 @@ nav a {
 /* =============================== Buttons =================================== */
 
 .btn {
-    background-color: #2b2d42;
     color: #ffffff;
     font-size: 1.25rem;
+}
+
+.btn-reg {
+    background-color: #2b2d42;
 }
 
 .btn:hover {

@@ -11,13 +11,15 @@
                     <label class="form-label" for="sandwich_name">
                         <i class="fas fa-bread-slice"></i> Sandwich Name
                     </label>
-                    <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
+                    <input class="form-control" type="text" value="{{ sandwich.sandwich_name }}" id="sandwich_name" name="sandwich_name" minlength="5" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
                 </div>
                 <div class="m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Description
                     </label>
-                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
+                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required>
+                        {{- sandwich.description -}}
+                    </textarea>
                 </div>
                 <div class="row m-2">
                 <div class="col-8">
@@ -25,9 +27,13 @@
                         <i class="fas fa-cheese"></i> Sandwich Category
                     </label>
                     <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
-                        <option value="" selected>-- Choose a Category --</option>
+                        <option value="" disabled>-- Choose a Category --</option>
                         {% for category in category %}
+                            {% if category.category == sandwich.category %}
+                            <option value="{{ category.category }}" selected>{{ category.category }}</option>
+                            {% else %}
                             <option value="{{ category.category }}">{{ category.category }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                 </div>
@@ -35,28 +41,31 @@
                     <label class="form-label">
                         <i class="fas fa-clock"></i> Prep Time
                     </label>
-                    <input class="form-control" type="number" id="prep_time" name="prep_time" required>
+                    <input class="form-control" type="number/text" value="{{sandwich.prep_time}}" id="prep_time" name="prep_time" required>
                 </div>
                 </div>
                 <div class="m-2">
                     <label class="form-label">
                         <i class="fas fa-bacon"></i> Ingredients
                     </label>
-                    <input class="form-control" type="text" id="ingredients" name="ingredients" minlength="5" placeholder="Please include main ingredient" required>
+                    <input class="form-control" type="text" value="{{ sandwich.ingredients }}" id="ingredients" name="ingredients" minlength="5" placeholder="Please include main ingredient" required>
                 </div>
                 <div class="m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Instructions
                     </label>
-                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" required></textarea>
+                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" required>
+                        {{- sandwich.instructions -}}
+                    </textarea>
                 </div>
                 <div class="m-2">
                     <label class="form-label">
                         <i class="fas fa-camera"></i> Image URL
                     </label>
-                    <input class="form-control" type="url" id="image_url" name="image_url">
+                    <input class="form-control" type="url" value="{{ sandwich.image_url }}" id="image_url" name="image_url">
                 </div>
-                <button type="submit" class="btn m-3 btn-signup">Edit Sandwich</button>
+                <a href="{{ url_for('sandwiches') }}" type="submit" class="btn m-2 btn-danger">Cancel Edit</a>
+                <button type="submit" class="btn btn-reg m-2">Edit Sandwich</button>
             </form>
         </div>
     </div>
