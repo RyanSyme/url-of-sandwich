@@ -76,6 +76,14 @@ nav a {
     color: #9fd9de;
 }
 
+.btn-done {
+    background-color: green;
+}
+
+.btn-edit {
+    background-color: black;
+}
+
 /* =============================== Base Section ============================== */
 
 .flashes h4 {

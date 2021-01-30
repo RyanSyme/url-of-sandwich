@@ -2,14 +2,21 @@
 {% block content %}
 
     {% for sandwich in sandwiches %}
-        {{ sandwich.sandwich_name }}<br>
-        {{ sandwich.description }}<br>
-        {{ sandwich.category }}<br>
-        {{ sandwich.prep_time }}<br>
-        {{ sandwich.ingredients }}<br>
-        {{ sandwich.instructions }}<br>
-        {{ sandwich.image_url }}<br>
-        {{ sandwich.created_by }}<br>
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card sandwich-card mt-5">
+                    <img src="{{ sandwich.image_url }}" class="card-img-top" alt="Sandwich Image" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
+                        <p class="card-text">{{ sandwich.category }}</p>
+                        <p class="card-text">{{ sandwich.prep_time }}</p>
+                        <p class="card-text">Created by: {{ sandwich.created_by }}</p>
+                        <a href="#" class="btn btn-done">Done</a>
+                        <a href="#" class="btn btn-edit">Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     {% endfor %}
 
 {% endblock %}
