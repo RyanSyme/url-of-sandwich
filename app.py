@@ -142,6 +142,13 @@ def edit_sandwich(sandwich_id):
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
 
+@app.route("/delete_sandwich/<sandwich_id>")
+def delete_sandwich(sandwich_id):
+    mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
+    flash("Sandwich Successfully Deleted")
+    return redirect(url_for("sandwiches"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
