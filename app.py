@@ -142,17 +142,30 @@ def edit_sandwich(sandwich_id):
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
 
+@app.route("/delete_sandwich/<sandwich_id>")
+def delete_sandwich(sandwich_id):
+    mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
+    flash("Sandwich Successfully Removed")
+    return redirect(url_for("sandwiches"))
+
+
 @app.route("/category")
 def category():
     category = list(mongo.db.category.find())
     return render_template("category.html", category=category)
 
 
-@app.route("/delete_sandwich/<sandwich_id>")
-def delete_sandwich(sandwich_id):
-    mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
-    flash("Sandwich Successfully Removed")
-    return redirect(url_for("sandwiches"))
+@app.route("/add_category",  methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        category = {
+            "category": request.form.get("category")
+        }
+        mongo.db.category.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("category"))
+
+    return render_template("add_category.html")
 
 
 if __name__ == "__main__":
