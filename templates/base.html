@@ -28,6 +28,11 @@
                         <a class="nav-link text-uppercase" href="{{ url_for('sandwiches') }}">SANDWICHES</a>
                     </li>
                     {% if session.user %}
+                        {% if session.user|lower == "earlofsandwich"|lower %}
+                            <li class="nav-item mr-3 mb-2">
+                                <a class="nav-link text-uppercase" href="{{ url_for('category') }}">MANAGE CATEGORIES</a>
+                            </li>
+                        {% endif %}
                         <li class="nav-item mr-3 mb-2">
                             <a class="nav-link text-uppercase" href="{{ url_for('add_sandwich') }}">ADD SANDWICH</a>
                         </li>

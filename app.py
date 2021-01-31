@@ -142,10 +142,16 @@ def edit_sandwich(sandwich_id):
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
 
+@app.route("/category")
+def category():
+    category = list(mongo.db.category.find())
+    return render_template("category.html", category=category)
+
+
 @app.route("/delete_sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
-    flash("Sandwich Successfully Deleted")
+    flash("Sandwich Successfully Removed")
     return redirect(url_for("sandwiches"))
 
 
