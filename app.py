@@ -115,7 +115,7 @@ def add_sandwich():
         flash("Sandwich Successfully Added")
         return redirect(url_for("sandwiches"))
 
-    category = mongo.db.category.find()
+    category = mongo.db.category.find().sort("category", 1)
     return render_template("add_sandwich.html", category=category)
 
 
@@ -137,7 +137,7 @@ def edit_sandwich(sandwich_id):
         return redirect(url_for("sandwiches"))
 
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
-    category = mongo.db.category.find()
+    category = mongo.db.category.find().sort("category", 1)
     return render_template(
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
@@ -151,7 +151,7 @@ def delete_sandwich(sandwich_id):
 
 @app.route("/category")
 def category():
-    category = list(mongo.db.category.find())
+    category = list(mongo.db.category.find().sort("category", 1))
     return render_template("category.html", category=category)
 
 
@@ -187,6 +187,7 @@ def delete_category(category_id):
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("category"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
