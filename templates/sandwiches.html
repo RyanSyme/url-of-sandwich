@@ -1,6 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
+     <div class="row">
+        <form action="{{ url_for('search') }}" method="post">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="query" id="query" minlength="3" placeholder="Search Sandwiches by Ingredient" required>
+                </div>
+                <div class="col">
+                    <button class="btn btn-reg" type="submit"><i class="fa fa-search"></i></button>
+                    <a href="{{ url_for('sandwiches') }}" class="btn btn-warning"><i class="fas fa-redo"></i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
     {% for sandwich in sandwiches %}
         <div class="row">
             <div class="col-md-6 col-lg-4">
@@ -10,10 +25,12 @@
                         <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
                         <p class="card-text">{{ sandwich.category }}</p>
                         <p class="card-text">{{ sandwich.prep_time }}</p>
-                        <p class="card-text">Created by: {{ sandwich.created_by }}</p>
+                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
                         {% if session.user|lower == sandwich.created_by|lower %}
+                        <div class="col">
                         <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
                         <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
+                        </div>
                         {% endif %}
                     </div>
                 </div>

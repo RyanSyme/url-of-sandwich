@@ -25,6 +25,13 @@ def sandwiches():
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    sandwiches = list(mongo.db.sandwiches.find({"$text": {"$search": query}}))
+    return render_template("sandwiches.html", sandwiches=sandwiches)
+
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
