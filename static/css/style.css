@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500&display=swap');
 
 body {
-    font-family: 'Comic Neue', cursive;
+    font-family: 'Mali', cursive;
     color: #2b2d42;
     background-color: #e6e6e6;
     text-align: center;
@@ -19,7 +19,8 @@ nav {
 
 .nav-symbol h3 {
     font-size: 2.25rem;
-    font-weight: 700 !important;
+    font-weight: 400 !important;
+    /* font-weight: 500 !important; */
     color: #2b2d42;
 }
 
