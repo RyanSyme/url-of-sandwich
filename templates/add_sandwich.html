@@ -3,8 +3,8 @@
  
 <div class="row">
         <div class="col-md-6 offset-md-3">
-            <form class="card mt-5 text-left" method="POST" action="{{ url_for('add_sandwich') }}">
-                <div class="col-12">
+            <form class="card mt-3 text-left sandwich-forms shadow" method="POST" action="{{ url_for('add_sandwich') }}">
+                <div class="col-12 pt-3">
                     <h3 class="text-center">Add a Sandwich</h3>
                 </div>
                 <div class="m-2">
@@ -20,7 +20,7 @@
                     <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
                 </div>
                 <div class="row m-2">
-                <div class="col-6">
+                <div class="col-5 offset-1">
                     <label class="form-label" for="category">
                         <i class="fas fa-cheese"></i> Sandwich Category
                     </label>
@@ -31,7 +31,7 @@
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-6">
+                <div class="col-5">
                     <label class="form-label">
                         <i class="fas fa-clock"></i> Prep Time
                     </label>

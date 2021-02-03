@@ -19,8 +19,8 @@ nav {
 
 .nav-symbol h3 {
     font-size: 2.25rem;
-    font-weight: 400 !important;
-    /* font-weight: 500 !important; */
+    /* font-weight: 400 !important; */
+    font-weight: 500 !important;
     color: #2b2d42;
 }
 
@@ -95,20 +95,18 @@ footer {
     color: #9fd9de;
 }
 
-.btn-done {
-    background-color: green;
-}
-
-.btn-edit {
-    background-color: black;
-}
-
 /* =============================== Base Section ============================== */
 
 .flashes h4 {
     line-height: 3;
     background-color: #2b2d42;
     color: #9fd9de;
+}
+
+/* =============================== Profile Section =========================== */
+
+.creations {
+    background-color: #9fd9de;
 }
 
 /* =============================== SignUp Section ============================ */
@@ -150,5 +148,11 @@ footer {
 }
 
 .card-body {
+    background-color: #9fd9de;
+}
+
+/* =============================== Add and Edit Forms ======================== */
+
+.sandwich-forms {
     background-color: #9fd9de;
 }
