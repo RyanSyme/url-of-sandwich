@@ -132,3 +132,23 @@ footer {
     height: 2.4rem !important;
     margin-left: -10px;
 }
+
+/* =============================== Sandwiches Section ======================== */
+
+.search-input input {
+    height: 100%;
+    width: 50%;
+}
+
+.btn-search {
+    margin-top: -5px;
+}
+
+.sandwich-url {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #9fd9de;
+}
