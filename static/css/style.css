@@ -65,6 +65,21 @@ nav a {
 .navbar button:focus {
     outline: none;
 }
+
+/* =============================== Footer ==================================== */
+
+footer {
+    background-color: #9fd9de;
+}
+
+.social-icons {
+    color: #2b2d42;
+}
+
+.social-icons:hover {
+    color: #993300;
+}
+
 /* =============================== Buttons =================================== */
 
 .btn {

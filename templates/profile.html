@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="container">
-            <div class="row">
-                <div class="col-12 my-3">
-                    <h3 class="sub-headers">
-                        <i class="fa fa-id-card"></i> {{ username|upper }}</h3>
-                    <hr class="block-divider" />
-                </div>
+    
+        <div class="row">
+            <div class="col-12 my-3">
+                <h3 class="sub-headers">
+                    <i class="fa fa-id-card"></i> {{ username|upper }}</h3>
+                <hr class="block-divider" />
             </div>
+        </div>
 
         <div class="row">
             {% for sandwich in sandwiches %}
