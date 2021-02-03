@@ -151,6 +151,10 @@ footer {
     background-color: #9fd9de;
 }
 
+.no-results {
+    height: 50vh;
+}
+
 /* =============================== Add and Edit Forms ======================== */
 
 .sandwich-forms {
