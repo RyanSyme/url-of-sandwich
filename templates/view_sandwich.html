@@ -1,25 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-     <div class="row">
-        <form class="col-12" action="{{ url_for('search') }}" method="post">
-            <div class="row">
-                <div class="col-8">
-                    <input type="text" name="query" id="query" minlength="3" placeholder="Search Sandwiches by Ingredient" required>
-                </div>
-                <div class="col">
-                    <button class="btn btn-reg" type="submit"><i class="fa fa-search"></i></button>
-                    <a href="{{ url_for('sandwiches') }}" class="btn btn-warning"><i class="fas fa-redo"></i></a>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    {% if sandwiches|length > 0 %}
-        <div class="row">
-            {% for sandwich in sandwiches %}
-            
-            <div class="col-md-6 col-lg-4">
+     <h1>The Sandwich</h1>
+     <div class="col-md-6 col-lg-4">
                 <div class="card sandwich-card mt-5">
                     <img src="{{ sandwich.image_url }}" class="card-img-top" alt="Sandwich Image" />
                     <div class="card-body">
@@ -39,11 +22,5 @@
                     </div>
                 </div>
             </div>
-            
-            {% endfor %}
-        </div>
-    {% else %}
-        <h3 class="text-center">No Sandwiches Found</h3>
-    {% endif %}
 
 {% endblock %}

@@ -32,6 +32,12 @@ def search():
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
+@app.route("/view_sandwich/<sandwich_id>")
+def view_sandwich(sandwich_id):
+    sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
+    return render_template("view_sandwich.html", sandwich=sandwich)
+
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -92,7 +98,10 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        sandwiches = list(
+            mongo.db.sandwiches.find({"created_by": username.lower()}))
+        return render_template(
+            "profile.html", username=username, sandwiches=sandwiches)
 
     return redirect(url_for("login"))
 
