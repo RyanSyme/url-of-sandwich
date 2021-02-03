@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="">Manage Categories</h3>
+    <h3 class="my-4">Categories</h3>
 
 
     <div class="row">
@@ -15,9 +15,9 @@
     <div class="row">
         {% for category in category %}
                 <div class="col-md-6 col-lg-4">
-                    <div class="card card-classes mt-5">
+                    <div class="card shadow card-classes mt-4">
                         <div class="card-body">
-                            <h5 class="card-title">{{ category.category }}</h5>
+                            <h5 class="card-title"><strong>{{ category.category|upper }}</strong></h5>
                             <a href="{{ url_for('delete_category', category_id=category._id) }}" class="btn btn-danger">Remove</a>
                             <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-reg">Edit</a>
                         </div>
