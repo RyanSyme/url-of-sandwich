@@ -9,24 +9,28 @@
                 <hr class="block-divider" />
             </div>
         </div>
+        <div class="row">
+            <div class="col-12 my-3">
+                <h3 class="sub-headers">Your Creations</h3>
+                <hr class="block-divider" />
+            </div>
+        </div>
 
         <div class="row">
             {% for sandwich in sandwiches %}
             
             <div class="col-md-6 col-lg-4">
                 <div class="card sandwich-card mt-5">
-                    <img src="{{ sandwich.image_url }}" class="card-img-top" alt="Sandwich Image" />
+                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" />
                     <div class="card-body">
                         <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
                         <p class="card-text">{{ sandwich.category }}</p>
                         <p class="card-text">{{ sandwich.prep_time }}</p>
                         <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                        <!-- {% if session.user|lower == sandwich.created_by|lower %} -->
-                        <div class="col">
+                        <div class="col mt-2">
                             <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
                             <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
                         </div>
-                        <!-- {% endif %} -->
                     </div>
                 </div>
             </div>
