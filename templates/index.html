@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
+
+
 <div class="row container-fluid callout-container">
     <div class="col-6 callout-img">
-        <!-- <img src="static/Img/Image_by_Clker_from_Pixabay-trim.png"> -->
-        <!-- <img src="static/Img/Image_by_Clker_from_Pixabay-blknwht.png"> -->
         <img src="static/Img/Image_by_Clker_from_Pixabay-line.png">
     </div>
     <div class="col-6 callout-text">
@@ -11,6 +11,37 @@
     </div>
 </div>
 
- 
-
+    {% if sandwiches|length > 0 %}
+        <div class="row">
+            <div class="col">
+                <h2 class="favourites">Our Favourite Sanwiches</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row card-row">
+            
+            {% for sandwich in sandwiches %}
+            <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
+            <div class="col-md-6 col-lg-4 card-row">
+                <div class="card shadow sandwich-card mt-5">
+                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                    <div class="card-body">
+                        <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
+                        <p class="card-text">Category: {{ sandwich.category }}</p>
+                        <p class="card-text">{{ sandwich.prep_time }}</p>
+                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
+                        <div class="col mt-2">
+                            <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">View Sandwich</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="container no-results">
+            <h3 class="text-center mt-3">No Sandwiches Found</h3>
+        </div>
+    {% endif %}
 {% endblock %}

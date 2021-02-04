@@ -21,8 +21,10 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
-    index = list(mongo.db.sandwiches.find().limit(3).skip(1).next())
-    return render_template("index.html", index=index)
+    sandwiches = list(
+                mongo.db.sandwiches.find(
+                    {"created_by": "earlofsandwich"}).limit(3))
+    return render_template("index.html", sandwiches=sandwiches)
 
 
 @app.route("/sandwiches")
