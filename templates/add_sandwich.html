@@ -2,60 +2,60 @@
 {% block content %}
  
 <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-8 offset-2">
             <form class="card mt-3 text-left sandwich-forms shadow" method="POST" action="{{ url_for('add_sandwich') }}">
                 <div class="col-12 pt-3">
                     <h3 class="text-center">Add a Sandwich</h3>
                 </div>
-                <div class="m-2">
+                <div class="col m-2">
                     <label class="form-label" for="sandwich_name">
                         <i class="fas fa-bread-slice"></i> Sandwich Name
                     </label>
                     <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="3" maxlength="50" title="Please use between 5-50 characters. Letters and Numbers only" required>
                 </div>
-                <div class="m-2">
+                <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Description
                     </label>
                     <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
                 </div>
                 <div class="row m-2">
-                <div class="col-5 offset-1">
-                    <label class="form-label" for="category">
-                        <i class="fas fa-cheese"></i> Sandwich Category
-                    </label>
-                    <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
-                        <option value="" selected>-- Choose a Category --</option>
-                        {% for category in category %}
-                            <option value="{{ category.category }}">{{ category.category }}</option>
-                        {% endfor %}
-                    </select>
+                    <div class="col-md-6">
+                        <label class="form-label" for="category">
+                            <i class="fas fa-cheese"></i> Sandwich Category
+                        </label>
+                        <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
+                            <option value="" selected>-- Choose a Category --</option>
+                            {% for category in category %}
+                                <option value="{{ category.category }}">{{ category.category }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">
+                            <i class="fas fa-clock"></i> Prep Time
+                        </label>
+                        <select class="form-select select-box" id="prep_time" name="prep_time" aria-label="prep time">
+                            <option value="" selected>-- Prep Time --</option>
+                            <option value="Quick and Easy">Quick and Easy</option>
+                            <option value="A Little Extra Attention">A Little Extra Attention</option>
+                            <option value="Pre-Planning Needed">Pre-Planning Needed</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-5">
-                    <label class="form-label">
-                        <i class="fas fa-clock"></i> Prep Time
-                    </label>
-                    <select class="form-select select-box" id="prep_time" name="prep_time" aria-label="prep time">
-                        <option value="" selected>-- Prep Time --</option>
-                        <option value="Quick and Easy">Quick and Easy</option>
-                        <option value="A Little Extra Attention">A Little Extra Attention</option>
-                        <option value="Pre-Planning Needed">Pre-Planning Needed</option>
-                    </select>
-                </div>
-                </div>
-                <div class="m-2">
+                <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-bacon"></i> Ingredients
                     </label>
                     <textarea class="form-control" type="text" id="ingredients" name="ingredients" rows="2" minlength="5" placeholder="One ingredient per line" required></textarea>
                 </div>
-                <div class="m-2">
+                <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Instructions
                     </label>
                     <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" placeholder="One instruction per line" required></textarea>
                 </div>
-                <div class="m-2">
+                <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-camera"></i> Image URL
                     </label>

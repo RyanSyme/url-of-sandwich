@@ -103,6 +103,28 @@ footer {
     color: #9fd9de;
 }
 
+main {
+    padding: 0 !important;
+}
+
+/* =============================== Index Section ============================= */
+
+.callout-container{
+    margin: -20% 0 0 !important;
+    padding: 20% 0 30% !important;
+    background-color: #9fd9de;
+    height: 50vh;
+    /* max-width: 100vw; */
+}
+
+.callout-img img {
+    max-width: 80%;
+}
+
+.callout-text h1 {
+    font-size: 300%;
+}
+
 /* =============================== Profile Section =========================== */
 
 .creations {
