@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="mt-5">LOG IN</h1>
+    <h1 class="mt-5 text-shadow">LOG IN</h1>
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <form class="card mt-5 text-left signup-form" method="POST" action="{{ url_for('login') }}">
@@ -23,7 +23,7 @@
                     </label>
                     <input class="form-control" type="password" id="password" name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Please use letters and numbers only" required>
                 </div>
-                <button type="submit" class="btn btn-reg m-3 btn-signup">Log In</button>
+                <button type="submit" class="btn btn-reg m-3">Log In</button>
                  <small class="text-muted text-center pb-2">Not registered yet? Sign Up <a href="{{ url_for('signup') }}" class="signup-login">Here.</a></small>
             </form>
         </div>
