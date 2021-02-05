@@ -11,10 +11,14 @@
     </div>
 </div>
 
+{% if session.user %}
+<hr class="mt-5">
+{% else %}
 <div class="mt-5">
-    <button type="submit" class="btn btn-reg btn-signup shadow">Sign Up Here!</button>
+    <a href="{{ url_for('signup') }}" type="submit" class="btn btn-reg btn-signup shadow">Sign Up Here!</a>
     <hr class="mt-5">
 </div>
+{% endif %}
 
 <div class="row mt-5">
     <div class="col-md-5 offset-1">
