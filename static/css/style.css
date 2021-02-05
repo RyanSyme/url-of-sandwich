@@ -106,6 +106,10 @@ footer {
     color: #9fd9de;
 }
 
+.view-btn-text strong:hover {
+    color: #993300;
+}
+
 /* =============================== Base Section ============================== */
 
 .flashes h4 {
@@ -208,6 +212,39 @@ footer {
 
 .no-results {
     height: 50vh;
+}
+
+/* =============================== View Sandwich Section ===================== */
+
+.sandwich-title {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.view-sandwich-img {
+    height: 60vh;
+    width: 40vw;
+    object-fit: cover;
+}
+
+.img-background {
+    background-color: #9fd9de;
+}
+
+.description-text {
+    font-size: 1.5rem;
+}
+
+.instructions-card {
+    background-color: #9fd9de;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.instructions-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 2rem;
 }
 
 /* =============================== Add and Edit Forms ======================== */

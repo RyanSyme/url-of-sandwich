@@ -1,27 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
 
-     <h1>The Sandwich</h1>
-     <div class="col-md-6 col-lg-4">
-                <div class="card sandwich-card mt-5">
-                    <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
-                    <div class="card-body">
-                        <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
-                        <p class="card-text">{{ sandwich.category }}</p>
-                        <p class="card-text">{{ sandwich.prep_time }}</p>
-                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                        {% if session.user|lower == sandwich.created_by|lower %}
-                        <div class="col">
-                            <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
-                            <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
-                        </div>
-                        {% endif %}
-                        <div class="col">
-                            <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}">View Sandwich</a>
-                        </div>
-                    </div>
-                </div>
+    <h1 class="sandwich-title text-shadow mb-5">{{ sandwich.sandwich_name }}</h1>
+    <div class="row img-background pt-5">
+        <div class="col-5 offset-1 mb-5">
+            <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
+            <img src="{{ sandwich.image_url }}" class="view-sandwich-img shadow" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+        </div>
+        <div class="col-5 offset-1 text-left">
+            <h3 class="my-5">Created by: <em></em>{{ sandwich.created_by|upper }}</em></h3>
+            <br>
+            <h4 class="my-5">Category: {{ sandwich.category }}</h4>
+            <br>
+            <h4 class="my-5">{{ sandwich.prep_time }}</h4>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+    <p class="description-text">{{ sandwich.description }}</p>
+    </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4 offset-1">
+            <div class="card instructions-card shadow">
+                <h2>Ingredients</h2>
+                    <hr>
+                    {% for line in sandwich.ingredients.splitlines() %}
+                        <ul>
+                            <li class="text-left"><i class="fas fa-bacon"></i> {{ line }}</li>
+                        </ul>
+                    {% endfor %}
             </div>
+        </div>
+        <div class="col-6">
+            <div class="card instructions-card shadow">
+                <h2>Instructions</h2>
+                <hr>
+                {% for line in sandwich.instructions.splitlines() %}
+                    <ul>
+                        <li class="text-left"><i class="fas fa-bread-slice"></i></i> {{ line }}</li>
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+                {% if session.user|lower == sandwich.created_by|lower %}
+                
+                <h5 class="view-btn-text mt-5">Would You Like to <strong>Edit</strong> or <strong>Delete</strong> Your Creation?</h5>
+                <div class="row">
+                <div class="col">
+                    <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
+                    <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
+                </div>
+                </div>
+                {% endif %}
+            
 
 {% endblock %}

@@ -27,8 +27,8 @@
                         <p class="card-text">{{ sandwich.prep_time }}</p>
                         <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
                         <div class="col mt-2">
-                            <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
                             <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
+                            <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
                         </div>
                     </div>
                 </div>
