@@ -2,7 +2,7 @@
 {% block content %}
  
 <div class="row">
-        <div class="col-md-8 offset-2">
+        <div class="col-md-6 offset-3">
             <form class="card mt-3 text-left sandwich-forms shadow" method="POST" action="{{ url_for('add_sandwich') }}">
                 <div class="col-12 pt-3">
                     <h3 class="text-center">Add a Sandwich</h3>
@@ -20,27 +20,35 @@
                     <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
                 </div>
                 <div class="row m-2">
-                    <div class="col-md-6">
-                        <label class="form-label" for="category">
-                            <i class="fas fa-cheese"></i> Sandwich Category
-                        </label>
-                        <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
-                            <option value="" selected>-- Choose a Category --</option>
-                            {% for category in category %}
+                    <div class="col-6">
+                        <div class="col">
+                            <label class="form-label" for="category">
+                                <i class="fas fa-cheese"></i> Category
+                            </label>
+                        </div>
+                        <div class="col">
+                            <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
+                                <option value="" selected>-- Choose a Category --</option>
+                                {% for category in category %}
                                 <option value="{{ category.category }}">{{ category.category }}</option>
-                            {% endfor %}
-                        </select>
+                                {% endfor %}
+                            </select>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label">
-                            <i class="fas fa-clock"></i> Prep Time
-                        </label>
-                        <select class="form-select select-box" id="prep_time" name="prep_time" aria-label="prep time">
-                            <option value="" selected>-- Prep Time --</option>
-                            <option value="Quick and Easy">Quick and Easy</option>
-                            <option value="A Little Extra Attention">A Little Extra Attention</option>
-                            <option value="Pre-Planning Needed">Pre-Planning Needed</option>
-                        </select>
+                    <div class="col-6">
+                        <div class="col">
+                            <label class="form-label">
+                                <i class="fas fa-clock"></i> Prep Time
+                            </label>
+                        </div>
+                        <div class="col">
+                            <select class="form-select select-box" id="prep_time" name="prep_time" aria-label="prep time">
+                                <option value="" selected>-- Prep Time --</option>
+                                <option value="Quick and Easy">Quick and Easy</option>
+                                <option value="A Little Extra Attention">A Little Extra Attention</option>
+                                <option value="Pre-Planning Needed">Pre-Planning Needed</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="col m-2">
