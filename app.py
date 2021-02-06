@@ -130,7 +130,7 @@ def add_sandwich():
             "description": request.form.get("description"),
             "category": request.form.get("category"),
             "prep_time": request.form.get("prep_time"),
-            "ingredients": request.form.getlist("ingredients"),
+            "ingredients": request.form.get("ingredients"),
             "instructions": request.form.get("instructions"),
             "image_url": request.form.get("image_url"),
             "created_by": session["user"]
