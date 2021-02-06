@@ -29,7 +29,7 @@ def index():
 
 @app.route("/sandwiches")
 def sandwiches():
-    sandwiches = list(mongo.db.sandwiches.find())
+    sandwiches = list(mongo.db.sandwiches.find().sort("sandwich_name", 1))
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 

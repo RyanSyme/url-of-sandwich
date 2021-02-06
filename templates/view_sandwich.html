@@ -24,18 +24,22 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-4 offset-1">
+        <!-- <div class="col-4 offset-1"> -->
+        <!-- <div class="col-3 offset-1"> -->
+        <div class="col-3 offset-1">
             <div class="card instructions-card shadow">
                 <h2>Ingredients</h2>
                     <hr>
                     {% for line in sandwich.ingredients.splitlines() %}
                         <ul>
-                            <li class="text-left"><i class="fas fa-bacon"></i> {{ line }}</li>
+                            <li class="text-left ingredients-list"><i class="fas fa-bacon"></i> {{ line }}</li>
                         </ul>
                     {% endfor %}
             </div>
         </div>
-        <div class="col-6">
+        <!-- <div class="col-6"> -->
+        <!-- <div class="col-6 offset-1"> -->
+        <div class="col-7">
             <div class="card instructions-card shadow">
                 <h2>Instructions</h2>
                 <hr>
