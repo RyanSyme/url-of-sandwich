@@ -58,7 +58,7 @@ nav a {
 }
 
 .navbar-toggler-icon i {
-    color: #993300;
+    color: #2b2d42;
     font-size: 25px;
     height: 25px;
     width: 25px;
@@ -151,7 +151,7 @@ footer {
 }
 
 .hype-text {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .hype-text em:hover {
@@ -256,4 +256,35 @@ footer {
 
 .sandwich-forms {
     background-color: #9fd9de;
+}
+
+/* =============================== Media Queries ============================= */
+
+@media screen and (max-width: 395px) {
+
+}
+
+@media screen and (max-width: 395px) {
+    .nav-symbol h3 {
+        font-size: 1.5rem;
+    }
+    .callout-container {
+    height: 30vh;
+    }
+
+    .btn-signup {
+    font-size: 1rem;
+    }
+
+    .hype-container div {
+        margin-left: 0;
+    }
+
+    .hype-text {
+    font-size: 1.2rem;
+    }
+
+    .favourites {
+    font-size: 10vw;
+    }
 }
