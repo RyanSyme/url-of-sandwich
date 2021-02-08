@@ -20,7 +20,7 @@
             <div class="col-md-6 col-lg-4 card-row">
                 <div class="card shadow sandwich-card mt-5">
                     <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
                     <div class="card-body">
                         <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
                         <p class="card-text">Category: {{ sandwich.category }}</p>
