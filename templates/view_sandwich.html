@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h1 class="sandwich-title text-shadow mb-5">{{ sandwich.sandwich_name }}</h1>
+    <h1 class="sandwich-title text-shadow pt-4 mb-5">{{ sandwich.sandwich_name }}</h1>
     <div class="row img-background pt-5">
         <div class="col-5 offset-1 mb-5">
             <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
@@ -52,8 +52,6 @@
         </div>
     </div>
                 {% if session.user|lower == sandwich.created_by|lower %}
-                
-                <h5 class="view-btn-text mt-5">Would You Like to <strong>Edit</strong> or <strong>Delete</strong> Your Creation?</h5>
                 <div class="row">
                 <div class="col">
                     <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>

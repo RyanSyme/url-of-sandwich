@@ -44,7 +44,7 @@ def search():
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
-@app.route("/view-sandwich/<sandwich_id>")
+@app.route("/sandwich-page/<sandwich_id>")
 def view_sandwich(sandwich_id):
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     return render_template("view_sandwich.html", sandwich=sandwich)
@@ -126,7 +126,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add_sandwich", methods=["GET", "POST"])
+@app.route("/add-sandwich", methods=["GET", "POST"])
 def add_sandwich():
     if request.method == "POST":
         sandwiches = {
@@ -147,7 +147,7 @@ def add_sandwich():
     return render_template("add_sandwich.html", category=category)
 
 
-@app.route("/edit_sandwich/<sandwich_id>", methods=["GET", "POST"])
+@app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
     if request.method == "POST":
         submit = {
@@ -170,7 +170,7 @@ def edit_sandwich(sandwich_id):
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
 
-@app.route("/delete_sandwich/<sandwich_id>")
+@app.route("/delete-sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
     flash("Sandwich Successfully Removed")
@@ -183,7 +183,7 @@ def category():
     return render_template("category.html", category=category)
 
 
-@app.route("/add_category",  methods=["GET", "POST"])
+@app.route("/add-category",  methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
         category = {
@@ -196,7 +196,7 @@ def add_category():
     return render_template("add_category.html")
 
 
-@app.route("/edit_category/<category_id>",  methods=["GET", "POST"])
+@app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
         submit = {
@@ -210,7 +210,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
-@app.route("/delete_category/<category_id>")
+@app.route("/delete-category/<category_id>")
 def delete_category(category_id):
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
