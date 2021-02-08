@@ -4,10 +4,10 @@
     <h1 class="text-shadow">Take A Look At Our Delicious Sandwiches</h1>
     <hr class="mt-5">
     <div class="row">
-        <form class="col-12" action="{{ url_for('search') }}" method="post">
+        <form class="col-12" action="{{ url_for('sandwiches') }}" method="get">
             <div class="row">
                 <div class="col-12 search-input">
-                    <input type="text" name="query" id="query" minlength="3" placeholder="Search Sandwiches by Ingredient"
+                    <input type="text" name="query" value="{{ query if query }}" id="query" minlength="3" placeholder="Search Sandwiches by Ingredient"
                         required>
                     <button class="btn btn-reg btn-search" type="submit"><i class="fa fa-search"></i></button>
                     <a href="{{ url_for('sandwiches') }}" class="btn btn-warning btn-search"><i class="fas fa-redo"></i></a>
@@ -22,7 +22,7 @@
             <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
             <div class="col-md-6 col-lg-4 justify-content-center">
                 <div class="card shadow sandwich-card mt-5">
-                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
                     <div class="card-body">
                         <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
                         <p class="card-text">Category: {{ sandwich.category }}</p>

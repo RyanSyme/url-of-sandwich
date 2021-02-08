@@ -29,8 +29,12 @@ def index():
 
 @app.route("/sandwiches")
 def sandwiches():
-    sandwiches = list(mongo.db.sandwiches.find().sort("sandwich_name", 1))
-    return render_template("sandwiches.html", sandwiches=sandwiches)
+    query = request.args.get("query")
+    if query:
+        sandwiches = list(mongo.db.sandwiches.find({"$text": {"$search": query}}))
+    else:
+        sandwiches = list(mongo.db.sandwiches.find().sort("sandwich_name", 1))
+    return render_template("sandwiches.html", query=query, sandwiches=sandwiches)
 
 
 @app.route("/search", methods=["GET", "POST"])
@@ -40,7 +44,7 @@ def search():
     return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
-@app.route("/view_sandwich/<sandwich_id>")
+@app.route("/view-sandwich/<sandwich_id>")
 def view_sandwich(sandwich_id):
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     return render_template("view_sandwich.html", sandwich=sandwich)

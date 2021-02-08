@@ -5,7 +5,7 @@
     <div class="row img-background pt-5">
         <div class="col-5 offset-1 mb-5">
             <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-            <img src="{{ sandwich.image_url }}" class="view-sandwich-img shadow" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+            <img src="{{ sandwich.image_url }}" class="view-sandwich-img shadow" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
         </div>
         <div class="col-4 offset-1 text-left">
             <h3 class="my-4">Created by: <em>{{ sandwich.created_by|upper }}</em></h3>
