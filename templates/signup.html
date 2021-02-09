@@ -9,7 +9,9 @@
                     <label for="username" class="form-label">
                         <i class="fas fa-user-plus ml-2"></i> Username
                     </label>
-                    <input class="form-control" type="text" id="username" name="username" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" title="Please use between 5-20 characters. Letters and Numbers only" required>
+                    <input class="form-control" type="text" id="username" name="username" minlength="5" maxlength="20"
+                        pattern="^[a-zA-Z0-9]{5,20}$" title="Please use between 5-20 characters. Letters and Numbers only"
+                        required>
                 </div>
                 <div class="m-3">
                     <label for="email" class="form-label">
@@ -21,10 +23,12 @@
                     <label for="password" class="form-label">
                         <i class="fas fa-lock ml-2"></i> Password
                     </label>
-                    <input class="form-control" type="password" id="password" name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" title="Please use letters and numbers only" required>
+                    <input class="form-control" type="password" id="password" name="password" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" title="Please use letters and numbers only" required>
                 </div>
                 <button type="submit" class="btn btn-reg m-3">Sign Up</button>
-                <small class="text-muted text-center pb-2">Already a member? Login <a href="{{ url_for('login') }}" class="signup-login">Here.</a></small>
+                <small class="text-muted text-center pb-2">Already a member? Login <a href="{{ url_for('login') }}"
+                        class="signup-login">Here.</a></small>
             </form>
         </div>
     </div>

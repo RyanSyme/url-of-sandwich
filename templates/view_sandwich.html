@@ -4,6 +4,7 @@
     <h1 class="sandwich-title text-shadow pt-4 mb-5">{{ sandwich.sandwich_name }}</h1>
     <div class="row img-background pt-5">
         <div class="col-5 offset-1 mb-5">
+            <!-- shows default image if no user image used or url fails -->
             <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
             <img src="{{ sandwich.image_url }}" class="view-sandwich-img shadow" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
         </div>
@@ -14,6 +15,7 @@
             <br>
             <h4 class="my-5">{{ sandwich.prep_time }}</h4>
             <br>
+            <!-- back button -->
             <a href="{{ url_for('sandwiches') }}" class="btn btn-reg shadow"><i class="fas fa-step-backward"></i> Back to Sandwiches</a>
         </div>
     </div>
@@ -30,6 +32,7 @@
             <div class="card instructions-card shadow">
                 <h2>Ingredients</h2>
                     <hr>
+                    <!-- renders ingredients one per line -->
                     {% for line in sandwich.ingredients.splitlines() %}
                         <ul>
                             <li class="text-left ingredients-list"><i class="fas fa-bacon"></i> {{ line }}</li>
@@ -43,6 +46,7 @@
             <div class="card instructions-card shadow">
                 <h2>Instructions</h2>
                 <hr>
+                <!-- renders instructions one per line -->
                 {% for line in sandwich.instructions.splitlines() %}
                     <ul>
                         <li class="text-left"><i class="fas fa-bread-slice"></i> {{ line }}</li>
@@ -51,14 +55,14 @@
             </div>
         </div>
     </div>
-                {% if session.user|lower == sandwich.created_by|lower %}
-                <div class="row">
-                <div class="col">
-                    <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
-                    <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
-                </div>
-                </div>
-                {% endif %}
+    {% if session.user|lower == sandwich.created_by|lower %}
+        <div class="row">
+            <div class="col">
+                <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
+                <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    {% endif %}
             
 
 {% endblock %}

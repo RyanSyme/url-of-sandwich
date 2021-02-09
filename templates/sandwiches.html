@@ -19,9 +19,10 @@
     {% if sandwiches|length > 0 %}
         <div class="row">
             {% for sandwich in sandwiches %}
-            <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
             <div class="col-md-6 col-lg-4 justify-content-center">
                 <div class="card shadow sandwich-card mt-5">
+                    <!-- shows default image if no user image used or url fails -->
+                    <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
                     <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
                     <div class="card-body">
                         <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>

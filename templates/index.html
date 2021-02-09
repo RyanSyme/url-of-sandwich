@@ -1,79 +1,91 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="row container-fluid callout-container pt-5">
-    <div class="col-6 callout-img">
-        <img src="static/Img/Image_by_Clker_from_Pixabay-line.png">
-    </div>
-    <div class="col-6 callout-text">
-        <h1 class="text-shadow">The Best<br>Thing Since<br>Sliced Bread</h1>
-    </div>
-</div>
-
-{% if session.user %}
-<hr class="mt-5">
-{% else %}
-<div class="mt-5">
-    <a href="{{ url_for('signup') }}" type="submit" class="btn btn-reg btn-signup shadow">Get Started!</a>
-    <hr class="mt-5">
-</div>
-{% endif %}
-
-<div class="row mt-5 hype-container">
-    <div class="col-md-5 offset-1">
-        <p class="hype-text">Here at <strong><em>Url of Sandwich</em></strong> you will find a fabulous range of the worlds most popular sandwiches, brought to you lovingly by our members.</p>
-    </div>
-    <div class="col-md-4 offset-1">
-        <div class="container">
-            <div id="sandwich-carousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img class="d-block w-100" src="static/Img/Image_by_Christine_Sponchia_from_Pixabay.jpg" alt="Flying Sandwich">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="static/Img/Image_by_andreas160578_from_Pixabay.jpg" alt="Openfaced Ham and Cheese Sandwich">
-                    </div>
-                    <div class="carousel-item">
-                    <img class="d-block w-100" src="static/Img/Image_by_tookapic_from_Pixabay.jpg" alt="Preparing a Sandwich">
-                    </div>
-                </div>
-            </div>
+    <!-- callout section -->
+    <div class="row container-fluid callout-container pt-5">
+        <div class="col-6 callout-img">
+            <img src="static/Img/Image_by_Clker_from_Pixabay-line.png">
+        </div>
+        <div class="col-6 callout-text">
+            <h1 class="text-shadow">The Best<br>Thing Since<br>Sliced Bread</h1>
         </div>
     </div>
-</div>
 
-    {% if sandwiches|length > 0 %}
-        <div class="row fav-container">
-            <div class="col">
-                <h2 class="favourites text-shadow">Our Favourite Sandwiches</h2>
-                <hr>
-            </div>
+    {% if session.user %}
+        <!-- button linking to sign up page if not session user -->
+        <hr class="mt-5">
+    {% else %}
+        <div class="mt-5">
+            <a href="{{ url_for('signup') }}" type="submit" class="btn btn-reg btn-signup shadow">Get Started!</a>
+            <hr class="mt-5">
         </div>
-        <div class="row card-row">
-            
-            {% for sandwich in sandwiches %}
-            <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-            <div class="col-md-6 col-lg-4 card-row">
-                <div class="card shadow sandwich-card mt-5">
-                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
-                    <div class="card-body">
-                        <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
-                        <p class="card-text">Category: {{ sandwich.category }}</p>
-                        <p class="card-text">{{ sandwich.prep_time }}</p>
-                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                        <div class="col mt-2">
-                            <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">View Sandwich</a>
+    {% endif %}
+
+    <!-- carousel area -->
+    <div class="row mt-5 hype-container">
+        <div class="col-md-5 offset-1">
+            <p class="hype-text">Here at <strong><em>Url of Sandwich</em></strong> you will find a fabulous range of the
+                worlds most popular sandwiches, brought to you lovingly by our members.</p>
+        </div>
+        <div class="col-md-4 offset-1">
+            <div class="container">
+                <div id="sandwich-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="static/Img/Image_by_Christine_Sponchia_from_Pixabay.jpg"
+                                alt="Flying Sandwich">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="static/Img/Image_by_andreas160578_from_Pixabay.jpg"
+                                alt="Openfaced Ham and Cheese Sandwich">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="static/Img/Image_by_tookapic_from_Pixabay.jpg"
+                                alt="Preparing a Sandwich">
                         </div>
                     </div>
                 </div>
             </div>
-            
-            {% endfor %}
+        </div>
+    </div>
+
+    {% if sandwiches|length > 0 %}
+    <div class="row fav-container">
+        <div class="col">
+            <h2 class="favourites text-shadow">Our Favourite Sandwiches</h2>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row card-row">
+
+    {% for sandwich in sandwiches %}
+        <!-- shows default image if no user image used or url fails -->
+        <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
+        <div class="col-md-6 col-lg-4 card-row">
+            <div class="card shadow sandwich-card mt-5">
+                <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image"
+                    onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                <div class="card-body">
+                    <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
+                    <p class="card-text">Category: {{ sandwich.category }}</p>
+                    <p class="card-text">{{ sandwich.prep_time }}</p>
+                    <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
+                    <div class="col mt-2">
+                        <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">
+                            View Sandwich
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
         </div>
     {% else %}
         <div class="container no-results">
             <h3 class="text-center mt-3">No Sandwiches Found</h3>
         </div>
     {% endif %}
+    
 {% endblock %}

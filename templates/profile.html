@@ -17,22 +17,23 @@
         <div class="row">
             {% for sandwich in sandwiches %}
             
-            <div class="col-md-6 col-lg-4 card-row">
-                <div class="card shadow sandwich-card mt-5">
-                    <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
-                    <div class="card-body">
-                        <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
-                        <p class="card-text">Category: {{ sandwich.category }}</p>
-                        <p class="card-text">{{ sandwich.prep_time }}</p>
-                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                        <div class="col mt-2">
-                            <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
-                            <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
+                <div class="col-md-6 col-lg-4 card-row">
+                    <div class="card shadow sandwich-card mt-5">
+                        <!-- shows default image if no user image used or url fails -->
+                        <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
+                        <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{ sandwich.sandwich_name }}</h5>
+                            <p class="card-text">Category: {{ sandwich.category }}</p>
+                            <p class="card-text">{{ sandwich.prep_time }}</p>
+                            <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
+                            <div class="col mt-2">
+                                <a href="{{ url_for('edit_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">Edit</a>
+                                <a href="{{ url_for('delete_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-danger">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             
             {% endfor %}
         </div>

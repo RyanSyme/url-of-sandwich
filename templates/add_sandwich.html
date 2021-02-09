@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
  
-<div class="row pt-4">
+    <div class="row pt-4">
         <div class="col-md-6 offset-3">
             <form class="card mt-3 text-left sandwich-forms shadow" method="POST" action="{{ url_for('add_sandwich') }}">
                 <div class="col-12 pt-3">
@@ -11,13 +11,15 @@
                     <label class="form-label" for="sandwich_name">
                         <i class="fas fa-bread-slice"></i> Sandwich Name
                     </label>
-                    <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="3" maxlength="50" title="Please use between 3-50 characters. Letters and Numbers only" required>
+                    <input class="form-control" type="text" id="sandwich_name" name="sandwich_name" minlength="3"
+                        maxlength="50" title="Please use between 3-50 characters. Letters and Numbers only" required>
                 </div>
                 <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Description
                     </label>
-                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
+                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5"
+                        required></textarea>
                 </div>
                 <div class="row m-2">
                     <div class="col-6">
@@ -27,7 +29,8 @@
                             </label>
                         </div>
                         <div class="col">
-                            <select class="form-select select-box" id="category" name="category" aria-label="form-select" required>
+                            <select class="form-select select-box" id="category" name="category" aria-label="form-select"
+                                required>
                                 <option value="" selected>-- Choose a Category --</option>
                                 {% for category in category %}
                                 <option value="{{ category.category }}">{{ category.category }}</option>
@@ -55,13 +58,15 @@
                     <label class="form-label">
                         <i class="fas fa-bacon"></i> Ingredients
                     </label>
-                    <textarea class="form-control" type="text" id="ingredients" name="ingredients" rows="2" minlength="5" placeholder="One ingredient per line" required></textarea>
+                    <textarea class="form-control" type="text" id="ingredients" name="ingredients" rows="2" minlength="5"
+                        placeholder="One ingredient per line" required></textarea>
                 </div>
                 <div class="col m-2">
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Instructions
                     </label>
-                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5" placeholder="One instruction per line" required></textarea>
+                    <textarea class="form-control" type="text" id="instructions" name="instructions" rows="2" minlength="5"
+                        placeholder="One instruction per line" required></textarea>
                 </div>
                 <div class="col m-2">
                     <label class="form-label">
