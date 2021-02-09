@@ -22,30 +22,25 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     sandwiches = list(
-                mongo.db.sandwiches.find(
-                    {"created_by": "earlofsandwich"}).limit(3))
+                mongo.db.sandwiches.find().sort( "_id", -1).limit(3))
     return render_template("index.html", sandwiches=sandwiches)
 
 
 @app.route("/sandwiches")
 def sandwiches():
+    # search bar request
     query = request.args.get("query")
     if query:
         sandwiches = list(mongo.db.sandwiches.find({"$text": {"$search": query}}))
     else:
-        sandwiches = list(mongo.db.sandwiches.find().sort("sandwich_name", 1))
+    # sort by time created
+        sandwiches = list(mongo.db.sandwiches.find().sort( "_id", -1))
     return render_template("sandwiches.html", query=query, sandwiches=sandwiches)
-
-
-@app.route("/search", methods=["GET", "POST"])
-def search():
-    query = request.form.get("query")
-    sandwiches = list(mongo.db.sandwiches.find({"$text": {"$search": query}}))
-    return render_template("sandwiches.html", sandwiches=sandwiches)
 
 
 @app.route("/sandwich-page/<sandwich_id>")
 def view_sandwich(sandwich_id):
+    # creates page for individual sandwiches
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     return render_template("view_sandwich.html", sandwich=sandwich)
 
@@ -110,6 +105,7 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
+        # show sandwiches created by user in profile
         sandwiches = list(
             mongo.db.sandwiches.find({"created_by": username.lower()}))
         return render_template(
@@ -128,6 +124,7 @@ def logout():
 
 @app.route("/add-sandwich", methods=["GET", "POST"])
 def add_sandwich():
+    # add form info to database
     if request.method == "POST":
         sandwiches = {
             "sandwich_name": request.form.get("sandwich_name"),
@@ -149,6 +146,7 @@ def add_sandwich():
 
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
+    # edit database record
     if request.method == "POST":
         submit = {
             "sandwich_name": request.form.get("sandwich_name"),
@@ -172,6 +170,7 @@ def edit_sandwich(sandwich_id):
 
 @app.route("/delete-sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
+    # delete sandwich from database
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
     flash("Sandwich Successfully Removed")
     return redirect(url_for("sandwiches"))
@@ -179,12 +178,14 @@ def delete_sandwich(sandwich_id):
 
 @app.route("/category")
 def category():
+    # list categories on category page
     category = list(mongo.db.category.find().sort("category", 1))
     return render_template("category.html", category=category)
 
 
 @app.route("/add-category",  methods=["GET", "POST"])
 def add_category():
+    # add new category
     if request.method == "POST":
         category = {
             "category": request.form.get("category")
@@ -198,6 +199,7 @@ def add_category():
 
 @app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
 def edit_category(category_id):
+    # edit category
     if request.method == "POST":
         submit = {
             "category": request.form.get("category")
@@ -212,6 +214,7 @@ def edit_category(category_id):
 
 @app.route("/delete-category/<category_id>")
 def delete_category(category_id):
+    # delete category
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("category"))
