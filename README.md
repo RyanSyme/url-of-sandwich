@@ -210,65 +210,79 @@ All of the following technologies were used to create this website:-
 
 ---
 
-<!-- ## **Testing** -->
+## **Testing**
 
-<!-- ### **Testing User Stories from the UX Section** -->
+### **Testing User Stories from the UX Section**
 
 
-<!-- **First Time Visitor Goals** -->
+**First Time Visitor Goals**
 
-<!-- * *As a First Time Visitor*, I would like to know what the company does upon opening the site. -->
-    <!-- *   On opening the website the visitor is met with the main image carousel with an advertisement proclaiming they should visit Norrtälje -->
+* *As a First Time Visitor*, I want to be able to navigate the website simply and easily.
+    *   On opening the website the visitor is met with the callout section which has a button connecting to the sign up page and a sticky nav directing the user to relevent pages
 
-<!-- * *As a First Time Visitor*, I want to be able to navigate the website simply and easily. -->
-    <!-- *	The website has a sticky navigation menu that is always available to allow quick access to each section of the site. -->
-    <!-- *	Each section is clearly marked with a header -->
+* *As a First Time Visitor*, I want to access the site across all devices.
+    *	The website is responsive across all devices
+    
+* *As a First Time Visitor*, I want to see other users creations.
+    *	The nav has a sandwiches button that links to a page that show all of the sandwiches in the database.
 
-<!-- * *As a First Time Visitor*, I want to access the site across all devices. -->
-    <!-- *	The website is responsive across all devices -->
-    <!-- *	The website has three different layouts depending on what size screen the customer is using -->
+* *As a First Time Visitor*, I want a a way to search other users creations.
+    *	The sandwiches page has a promenent search bar that allows the user to search through the the sandwiches by ingredient.
 
-<!-- * *As a First Time Visitor*, I want to find out about Norrtälje. -->
-    <!-- *	The about section has some information on the town and the navbar has a button that directs the user to the about section -->
-    <!-- *   The info section also has additional information about certain subjects such as restaurants and activities -->
+* *As a First Time Visitor*, I want to be able to sign up as a user.
+    *   There is a sign up link in the nav and also a button under the callout guiding the user to the sign up page.
+    *   The user only need to provide a user name email and password to sign up.
 
-<!-- * *As a First Time Visitor*, I want to find where Norrtälje is situated. -->
-    <!-- *   The about section explains where Norrtälje is located -->
-    <!-- *   The interactive map shows Norrtälje’s exact position in Sweden. -->
+* *As a First Time Visitor*, I want to add my own creations.
+    *   Any member can add a sandwich to the database via the 'add sandwich' page.
+    *   The user can add any type of sandwich they wish and can add an image if they wish. If they choose not to add an image, one is added for them automatically.
 
-<!-- **Returning Visitor Goals** -->
+* *As a First Time Visitor*, I want a page where I can see my own creations.
+    *   A signed in user can view all of their own sandwich creations on their profile page.
 
-<!-- * *As a Returning Visitor*, I want to locate the websites social media links to stay up to date with any new content. -->
-    <!-- *   The social media links are found on the footer at the bottom of the page -->
+**Returning Visitor Goals**
 
-<!-- * *As a Returning Visitor*, I would like to be able to search for accommodation in the area -->
-    <!-- *	The interactive map has an accommodation button, allowing the visitor to see all of the available accommodation -->
 
-<!-- * *As a Returning Visitor*, I would like to be able to search for restaurants and activities in the area -->
-    <!-- *	The interactive map has both a restaurant button and an activities button. -->
-    <!-- *   Additionally there are several other buttons including a parking button so visitors can decide where best to park. -->
 
-<!-- * *As a Returning Visitor*, I would like to be able to contact the bureau. -->
-    <!-- *   The website has a contact form that can be used to contact the bureau directly by email -->
-    <!-- *   The navbar has a contact button that direct the visitor to the contact form -->
-    <!-- *   The address and contact details of the bureau are also located in the footer -->
 
-<!-- ### **Code Validation** -->
 
-<!-- #### *W3 Validators* -->
 
-<!-- *    The HTML was Validted at [W3C Markup Validation Service](https://validator.w3.org/).  -->
 
-<!-- ![HTML Validation](assets/readme-files/validator.w3.org.png) -->
-<!-- ![HTML Validation](assets/readme-files/validator.w3.org-passed.png) -->
 
-<!-- *    The CSS was validate at [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/). -->
+* *As a Returning Visitor*, I want to be able to inspect and edit my own creations.
+    *   On the profile page, the user can edit or remove any of their own creation if they so choose.
+    *   The user can also edit or remove their sandwiches from the view sandwich page.
 
-<!-- ![CSS Validation](assets/readme-files/jigsaw.w3.org.png) -->
+* *As a Returning Visitor*, I want other users to view my creations but not edit them.
+    *	Users can view any sandwich in the database via the sandwiches page and see them in more detail on the view sandwich page.
+    *   No user can edit or delete another users sandwiches
 
-<!-- *    The Javascript was validated at [JSHint](https://jshint.com/). -->
+* *As a Returning Visitor*, I want to easily navigate to the log in page to view my profile
+    *	The sticky nav has a link to the login page
+    *   Once logged in a user is directed to their profile page
 
-<!-- ![CSS Validation](assets/readme-files/jshint.com.png) -->
+* *As a Returning Visitor*, I want to view all of the sandwiches I have added to the site
+    *   The users profile page displays a collection of all of their own sandwiches
+
+* *As a Returning Visitor*, I want to be able to delete any of my own creations I no longer want.
+    *   The user can edit or delete any of their own creations at any point as long as they are signed in
+    *   Users can only edit or delete sandwiches that they have created.
+
+* *As a Returning Visitor*, I want to be able to log out of the site.
+    *   There is a log out button on the sticky nav that can be used on any page of the site.
+
+### **Code Validation**
+
+#### *W3 Validators*
+
+*    The HTML was Validted at [W3C Markup Validation Service](https://validator.w3.org/). 
+
+<!-- ![HTML Validation](screen) -->
+<!-- ![HTML Validation](screen) -->
+
+*    The CSS was validate at [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
+
+<!-- ![CSS Validation](screen) -->
 
 <!-- ### **Manual Testing** -->
 

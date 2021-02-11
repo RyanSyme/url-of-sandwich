@@ -38,7 +38,7 @@ def sandwiches():
     return render_template("sandwiches.html", query=query, sandwiches=sandwiches)
 
 
-@app.route("/sandwich-page/<sandwich_id>")
+@app.route("/view_sandwich/<sandwich_id>")
 def view_sandwich(sandwich_id):
     # creates page for individual sandwiches
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
@@ -122,7 +122,7 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/add-sandwich", methods=["GET", "POST"])
+@app.route("/add_sandwich", methods=["GET", "POST"])
 def add_sandwich():
     # add form info to database
     if request.method == "POST":
@@ -144,7 +144,7 @@ def add_sandwich():
     return render_template("add_sandwich.html", category=category)
 
 
-@app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
+@app.route("/edit_sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
     # edit database record
     if request.method == "POST":
@@ -168,7 +168,7 @@ def edit_sandwich(sandwich_id):
         "edit_sandwich.html", sandwich=sandwich, category=category)
 
 
-@app.route("/delete-sandwich/<sandwich_id>")
+@app.route("/delete_sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
     # delete sandwich from database
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
@@ -183,7 +183,7 @@ def category():
     return render_template("category.html", category=category)
 
 
-@app.route("/add-category",  methods=["GET", "POST"])
+@app.route("/add_category",  methods=["GET", "POST"])
 def add_category():
     # add new category
     if request.method == "POST":
@@ -197,7 +197,7 @@ def add_category():
     return render_template("add_category.html")
 
 
-@app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
+@app.route("/edit_category/<category_id>",  methods=["GET", "POST"])
 def edit_category(category_id):
     # edit category
     if request.method == "POST":
@@ -212,7 +212,7 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
-@app.route("/delete-category/<category_id>")
+@app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     # delete category
     mongo.db.category.remove({"_id": ObjectId(category_id)})
