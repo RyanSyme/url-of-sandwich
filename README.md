@@ -284,37 +284,37 @@ All of the following technologies were used to create this website:-
 
 <!-- ![CSS Validation](screen) -->
 
-<!-- ### **Manual Testing** -->
+### **Manual Testing**
 
-<!-- #### *Google Developer Tools* -->
+#### *Google Developer Tools*
 
-   <!-- *    The websites design responsiveness has been tested on all device sizes using Google Developer Tools. -->
+   *    The websites design responsiveness has been tested on all device sizes using Google Developer Tools.
 
-<!-- #### *Testing On Mobile Devices* -->
-   <!-- *    Apple iOS -->
-   <!-- *    Google Android 7 -->
-   <!-- *    Microsoft Windows Phone -->
-   <!-- *    Samsung Tizen OS -->
-   <!-- *    Nokia Symbian -->
-   <!-- *    Mozilla Firefox OS -->
+#### *Testing On Mobile Devices*
+   *    Apple iOS
+   *    Google Android 7
+   *    Microsoft Windows Phone
+   *    Samsung Tizen OS
+   *    Nokia Symbian
+   *    Mozilla Firefox OS
  
-<!-- #### *Testing On Browsers* -->
-   <!-- *    Google Chrome -->
-   <!-- *    Opera -->
-   <!-- *    Firefox -->
-   <!-- *    Apple Safari -->
-   <!-- *    Microsoft Explorer -->
-   <!-- *    Microsoft Edge -->
+#### *Testing On Browsers*
+   *    Google Chrome
+   *    Opera
+   *    Firefox
+   *    Apple Safari
+   *    Microsoft Explorer
+   *    Microsoft Edge
     
-<!-- #### *Testing On Operating Systems* -->
-   <!-- *    Microsoft Windows -->
-   <!-- *    Linux -->
-   <!-- *    Apple Mac OS -->
-   <!-- *    Google Chrome OS -->
-   <!-- *    IBM Warp -->
+#### *Testing On Operating Systems*
+   *    Microsoft Windows
+   *    Linux
+   *    Apple Mac OS
+   *    Google Chrome OS
+   *    IBM Warp
 
     
-<!-- #### *Issues Found* -->
+#### *Issues Found*
 
 <!-- *   An issue was found with the carousel on mobile devices, the resizing would make the text too large and distort the carousel. -->
     <!-- *   The issue was resolved with some changes to text sizes in the media queries -->
