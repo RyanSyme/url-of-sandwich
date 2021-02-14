@@ -289,12 +289,13 @@ footer {
     .nav-symbol h3 {
         font-size: 1.5rem;
     }
+
     .callout-container {
-    height: 30vh !important;
+        height: 30vh !important;
     }
 
     .btn-signup {
-    font-size: 1rem;
+        font-size: 1rem;
     }
 
     .hype-container div {
@@ -325,6 +326,10 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
+
+    .callout-container {
+        height: 30vh !important;
+    }
 
     .ml-5, .mx-5 {
     margin-left: 1rem!important;
