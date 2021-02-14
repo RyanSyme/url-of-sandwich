@@ -132,26 +132,26 @@ The Google font Mali had been used exclusively on the website
     1. The Index page consists of a Nav section and footer section that feature on every page. It also includes an image carousel and a latest sandwiches section.
     ![Top](static/readme-files/top.png)    
     ![Carousel](static/readme-files/carousel.png)    
-    <!-- ![Latest](screen)     -->
+    ![Latest](static/readme-files/latest.png)    
     
     2. The sandwiches section displays the full database of sandwiches that users have created. Each sandwich has its own card with an image of the sandwich, it's name and prep time. Each card also has view sandwich button to allow the user to see each recipe. There is also a search bar allowing the user to search the sandwiches by ingredient.
-    <!-- ![Sandwich Cards](screen) -->
+    ![Sandwich Cards](static/readme-files/sandwichesscreen.png)
     
     3. The Login and Sign Up sections take the customer to the related page, allowing the customer to either login or sign up. The pages have links to each other incase the customer has click the wrong one.
-    <!-- ![Login](screen) -->
-    <!-- ![Sign Up](screen) -->
+    ![Login](static/readme-files/loginscr.png)
+    ![Sign Up](static/readme-files/signupscr.png)
     
     4. The add sandwich page has a form which allows the customer to add a sandwich to the database.
-    <!-- ![Add Sandwich](screen) -->
+    ![Add Sandwich](static/readme-files/addsandwichscr.png)
     
     5. The profile section shows the user their own creations which they can edit or delete if they wish.
-    <!-- ![Profile](screen) -->
+    ![Profile](static/readme-files/profilescr.png)
     
     6. The log out button logs the user out and returns them to the landing page.
-    <!-- ![Log Out](screen) -->
+    ![Log Out](static/readme-files/logout.png)
 
     7. The Earl of Sandwich (Admin) has an additional page where they can add, edit or remove categories.
-    <!-- ![Categories](screen) -->
+    ![Categories](static/readme-files/categories.png)
 
 ### **Existing Features**
 
@@ -249,13 +249,6 @@ All of the following technologies were used to create this website:-
 
 **Returning Visitor Goals**
 
-
-
-
-
-
-
-
 * *As a Returning Visitor*, I want to be able to inspect and edit my own creations.
     *   On the profile page, the user can edit or remove any of their own creation if they so choose.
     *   The user can also edit or remove their sandwiches from the view sandwich page.
@@ -323,8 +316,10 @@ All of the following technologies were used to create this website:-
     
 #### *Issues Found*
 
-<!-- *   An issue was found with the carousel on mobile devices, the resizing would make the text too large and distort the carousel. -->
-    <!-- *   The issue was resolved with some changes to text sizes in the media queries -->
+*   An issue was found with the carousel and callout text being on the same line on different device sizes, the resizing would make the text too large and the carousel too small.
+    *   The issue was resolved with some changes to the css in the media queries and by using the bootstra grid system.
+
+*   
 
 <!-- *   JSHint found a missing semi-colon in my JavaScript. -->
     <!-- *   The issue was fixed by adding the semi-colon -->
