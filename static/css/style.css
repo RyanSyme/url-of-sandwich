@@ -328,7 +328,7 @@ footer {
 @media screen and (max-width: 320px) {
 
     .callout-container {
-        height: 30vh !important;
+        height: 20vh !important;
     }
 
     .ml-5, .mx-5 {
