@@ -4,7 +4,7 @@
 
 ---
 
-<!-- ![Url of SAndwich](multi-screenshot) -->
+![Url of Sandwich](static/readme-files/Multishottransparent.png)
 This webpage has been created to showcase the skills I have learned in the Datacentric Developement section of the Code Institute Full Stack Web Developer course; this is the third of four projects that I will be creating for the course.
 For this project I have chosen to create a sandwich recipe website using the MongoDB database, Python, Flask and Jinja.
 The reason for this selection is to create a website that users can interact with by joining the website, being able to view other people's creations and adding there own sandwiches to the database.
@@ -59,9 +59,16 @@ On this site a user is able to:
 - delete sandwich recipes they have created
 
 ### **Wireframes**
-<!-- ![Wireframes](wireframe screens) -->
+![Sitemap](static/readme-files/sitemap.png)
+![Index](static/readme-files/index.png)
+![Sandwiches](static/readme-files/sandwiches.png)
+![View-Sandwich](static/readme-files/view-sandwich.png)
+![Login](static/readme-files/login.png)
+![Sign-Up](static/readme-files/signup.png)
+![Profile](static/readme-files/profile.png)
+![Create-Sandwich](static/readme-files/createsandwich.png)
 
-<!-- you can find a full size PDF of the Wireframes [here](wireframe pdf) -->
+you can find a full size PDF of the Wireframes [here](https://bea8e478-4bc6-44df-a287-ee1dbc1f65af.ws-eu03.gitpod.io/files/download/?id=6065fa6f-18e7-4c7c-97f5-54ef1e094bae) 
 
 #### **Design Differences**
 
@@ -82,9 +89,9 @@ Bootstrap and jQuery have both been used to form the structural layout of this w
 The Google font Mali had been used exclusively on the website
 
 #### *Colors*
-<!-- * There are four non-image colors used on the website: -->
+* There are four non-image colors used on the website:
     
-    <!-- ![Colors](coolers screen) -->
+    ![Colors](static/readme-files/colors.png)
     *   #2b2d42 has been used for the main text and buttons
     *   #9fd9de has been used for the Nav, Footer and containers
     *   #ffffff has been used for the some text and boxes
@@ -122,10 +129,10 @@ The Google font Mali had been used exclusively on the website
 
 * The Project is a multi-page website which uses a MongoDB database and Jinja/Python template management.
 
-    1. The Index page consists of a Nav section and footer section that feature on every page. It also includes an image carousel and a favourite sandwiches section.
-    <!-- ![Top](screen)     -->
-    <!-- ![Carousel](screen)     -->
-    <!-- ![Favourites](screen)     -->
+    1. The Index page consists of a Nav section and footer section that feature on every page. It also includes an image carousel and a latest sandwiches section.
+    ![Top](static/readme-files/top.png)    
+    ![Carousel](static/readme-files/carousel.png)    
+    <!-- ![Latest](screen)     -->
     
     2. The sandwiches section displays the full database of sandwiches that users have created. Each sandwich has its own card with an image of the sandwich, it's name and prep time. Each card also has view sandwich button to allow the user to see each recipe. There is also a search bar allowing the user to search the sandwiches by ingredient.
     <!-- ![Sandwich Cards](screen) -->
