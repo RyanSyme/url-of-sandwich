@@ -348,33 +348,34 @@ All of the following technologies were used to create this website:-
 
 ---
 
-<!-- ## **Credits** -->
+## **Credits**
 
-<!-- ### **Content** -->
-<!-- *	Code was used from [Developers.Google](https://developers.google.com/maps/documentation/javascript/tutorials) -->
-
-<!-- *   With additional help from [Traversy Media](https://www.youtube.com/watch?v=Zxf1mnP5zcw&t=1101s) -->
-
-<!-- ### **Media** -->
-
-<!-- * The photos used in this site were obtained from [Norrtälje Kommun]( https://www.instagram.com/norrtaljekommun/?hl=en/)  -->
-
-<!-- *   The coat of arms image used to as a logo for the site was obtained from  -->
-    <!-- [SearchPNG.com]( https://www.searchpng.com/) -->
+### **Content**
 
 
-<!-- ### **Acknowledgements** -->
+### **Media**
 
-<!-- *	I received design inspiration from: -->
+*   All images used for the carousel, logo and default sandwich card were obtained from [Pixabay](https://pixabay.com/)
+    *   With special mention to:
+        *   [andreas160578](https://pixabay.com/users/andreas160578-2383079/)
+        *   [Christine_Sponchia](https://pixabay.com/users/sponchia-443272/)
+        *   [Clker](https://pixabay.com/users/clker-free-vector-images-3736/)
+        *   [LuckyLife11](https://pixabay.com/users/luckylife11-5245360/)
+        *   [tookapic](https://pixabay.com/users/tookapic-1386459/)
 
-    <!-- * **Matt Rudge** at [Code Institute](https://courses.codeinstitute.net/login)  -->
+
+### **Acknowledgements**
+
+*	I received design inspiration from:
+
+    *	The Data Centric Development Mini Project lesson from the [Code Institute](https://courses.codeinstitute.net/login) Full Stack Developer Course.
+
+    *   Advice for improving my search bar code from my Code Institute mentor **Oluwafemi Medale**
+
+    *   Additional help to create a default image on sandwich cards is credited to [StackOverflow](https://stackoverflow.com/questions/7995080/html-if-image-is-not-found)
+
+*	I received styling inspiration from:
+
+    *   [BBCGoodFood](https://www.bbcgoodfood.com/recipes/egg-less-mayo-sandwiches) 
     
-    <!-- * [Developers.Google](https://developers.google.com/maps/documentation/javascript/tutorials)  -->
-    <!-- * [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)  -->
-    <!-- * [geeksforgeeks.org](https://www.geeksforgeeks.org/how-to-clear-form-after-submit-in-javascript-without-using-reset/) -->
-
-<!-- *	I received styling inspiration from: -->
-
-    <!-- *   [CSS-Tricks.com](https://css-tricks.com)  -->
-    
-<!-- *   Additional Thanks to my mentor **Oluwafemi Medale** for styling and formatting advice -->
+*   Additional Thanks to my mentor **Oluwafemi Medale** for styling and formatting advice.
