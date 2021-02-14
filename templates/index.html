@@ -23,11 +23,11 @@
 
     <!-- carousel area -->
     <div class="row mt-5 hype-container">
-        <div class="col-md-5 offset-1">
+        <div class="col-lg-6">
             <p class="hype-text">Here at <strong><em>Url of Sandwich</em></strong> you will find a fabulous range of the
                 worlds most popular sandwiches, brought to you lovingly by our members.</p>
         </div>
-        <div class="col-md-4 offset-1">
+        <div class="col-lg-6">
             <div class="container">
                 <div id="sandwich-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -71,13 +71,14 @@
                     <p class="card-text">Category: {{ sandwich.category }}</p>
                     <p class="card-text">{{ sandwich.prep_time }}</p>
                     <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                    <div class="col mt-2">
-                        <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">
-                            View Sandwich
-                        </a>
-                    </div>
+                </div>
+                <div class="col mb-3">
+                    <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">
+                        View Sandwich
+                    </a>
                 </div>
             </div>
+            
         </div>
 
     {% endfor %}

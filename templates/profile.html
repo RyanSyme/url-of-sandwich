@@ -8,8 +8,13 @@
                 <hr class="block-divider" />
             </div>
         </div>
+        {% if session.user|lower == "earlofsandwich"|lower  %}
+            <div>
+                <a href="{{ url_for('category') }}" class="btn btn-reg shadow"><i class="fas fa-cog"></i> Edit Categories</a>
+            </div>
+        {% endif %}
         <div class="row">
-            <div class="col-12 my-3 creations">
+            <div class="col-12 my-5 creations">
                 <h3>Your Sandwiches</h3>
             </div>
         </div>
