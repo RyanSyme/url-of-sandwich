@@ -3,12 +3,12 @@
 
     <h1 class="sandwich-title text-shadow pt-4 mb-5">{{ sandwich.sandwich_name }}</h1>
     <div class="row img-background pt-5">
-        <div class="col-5 offset-1 mb-5">
+        <div class="col-12 col-lg-5 offset-lg-1 mb-5">
             <!-- shows default image if no user image used or url fails -->
             <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
             <img src="{{ sandwich.image_url }}" class="view-sandwich-img shadow" alt="Sandwich Image" onerror="this.onerror=null; this.src='/static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
         </div>
-        <div class="col-4 offset-1 text-left">
+        <div class="col-12 col-lg-4 offset-lg-1 text-left sandwich-info">
             <h3 class="my-4">Created by: <em>{{ sandwich.created_by|upper }}</em></h3>
             <br>
             <h4 class="my-5">Category: {{ sandwich.category }}</h4>
@@ -26,7 +26,7 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-4 offset-1">
+        <div class="col-12 col-md-4 offset-md-1">
             <div class="card instructions-card shadow">
                 <h2>Ingredients</h2>
                     <hr>
@@ -38,7 +38,7 @@
                     {% endfor %}
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <div class="card instructions-card shadow">
                 <h2>Instructions</h2>
                 <hr>
