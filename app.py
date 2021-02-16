@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     sandwiches = list(
-                mongo.db.sandwiches.find().sort( "_id", -1).limit(6))
+                mongo.db.sandwiches.find().sort( "_id", -1).limit(3))
     return render_template("index.html", sandwiches=sandwiches)
 
 

@@ -120,10 +120,6 @@ footer {
     color: #9fd9de;
 }
 
-/* main {
-    padding: 0 !important;
-} */
-
 /* =============================== Index Section ============================= */
 
 .callout-container {
@@ -157,6 +153,10 @@ footer {
 
 .hype-text em:hover {
     color: #993300;
+}
+
+.card-row {
+    justify-content: center;
 }
 
 /* =============================== Profile Section =========================== */
@@ -211,10 +211,6 @@ footer {
     min-height: 488px;
     background-color: #9fd9de;
 }
-
-/* .card-body {
-    background-color: #9fd9de;
-} */
 
 .no-results {
     height: 50vh;
@@ -279,10 +275,6 @@ footer {
         margin-left: 0;
     }
 
-    .sandwich-card {
-        min-height: 464px;
-    }
-
     .view-sandwich-img {
     height: 60vh;
     width: 80vw;
@@ -292,6 +284,8 @@ footer {
         text-align: center !important;
         padding-bottom: 1rem;
     }
+
+
 }
 
 @media screen and (max-width: 425px) {
@@ -340,7 +334,7 @@ footer {
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 375px) {
 
     .callout-container {
         height: 20vh !important;
@@ -352,6 +346,10 @@ footer {
 
     .mr-5, .mx-5 {
     margin-right: 0.8rem!important;
+    }
+
+    .fa-5x {
+        font-size: 4rem;
     }
 
     .select-box {
