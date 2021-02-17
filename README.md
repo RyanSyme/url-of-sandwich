@@ -332,7 +332,7 @@ All of the following technologies were used to create this website:-
 5. Go to [Heroku](https://www.heroku.com) and log in.
 6. Once logged in, and in your dashboard, click on "Create New App".
 7. Under "Create New App" click on the input field called "App Name".
-8. Give your app a unique nameand select the closest region to your location.
+8. Give your app a unique name and select the closest region to your location.
 9. Click "Create App"
 10. In the "Deployment Method" section, connect the app by clicking on the "Github" icon.
 11. Type the Github repo-name in the "Connect to Github" section input.
