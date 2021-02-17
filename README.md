@@ -317,9 +317,7 @@ All of the following technologies were used to create this website:-
 #### *Issues Found*
 
 *   An issue was found with the carousel and callout text being on the same line on different device sizes, the resizing would make the text too large and the carousel too small.
-    *   The issue was resolved with some changes to the css in the media queries and by using the bootstra grid system.
-
-*   
+    *   The issue was resolved with some changes to the css in the media queries and by using the bootstrap grid system.
 
 <!-- *   JSHint found a missing semi-colon in my JavaScript. -->
     <!-- *   The issue was fixed by adding the semi-colon -->
@@ -329,22 +327,39 @@ All of the following technologies were used to create this website:-
 
 ---
 
-<!-- ## **Deployment** -->
+## **Deployment**
 
-<!-- ### **Remote Deployment** -->
-<!-- 1. Navigate to the GitHub [Repository:](https://github.com/RyanSyme/Milestone-2-Visit-Norrtalje) -->
-<!-- 2. Click the **Settings** Tab. -->
-<!-- 3. Scroll Down to the **Git Hub Pages** Heading. -->
-<!-- 4. Select **Master Branch** as the source. -->
-<!-- 5. Click the **Save button**. -->
-<!-- 6. Click on the link to go to the live deployed page. -->
+### **Remote Deployment**
+1. Navigate to the GitHub [Repository:](https://github.com/RyanSyme/url-of-sandwich)
+2. Open [repository](https://github.com/RyanSyme/url-of-sandwich) using [GitPod](https://www.gitpod.io/) IDE.
+3. In terminal run "pip3 freeze --local > requirements.txt" command to create a .txt file with all of the dependencies used that [Heroku](https://www.heroku.com) needs to know what dependencies app uses.
+4. In the terminal run the "echo web: python app.py > Procfile" command to create Procfile that [Heroku](https://www.heroku.com) needs to know what file runs the app.
+5. Go to [Heroku](https://www.heroku.com) and log in.
+6. Once logged in, and in your dashboard, click on "Create New App".
+7. Under "Create New App" click on the input field called "App Name".
+8. Give your app a unique nameand select the closest region to your location.
+9. Click "Create App"
+10. In the "Deployment Method" section, connect the app by clicking on the "Github" icon.
+11. Type the Github repo-name in the "Connect to Github" section input.
+12. Click "search" to find the repo and once it is found click "connect".
+13. Before clicking the "Enable Automatic Deployment" button, click on the settings tab in the top part of the page.
+14. Click on "Reveal Config Var".
+15. Here you can inform Heroku of which variables will be required.
+16. The required variables are: (IP, PORT, MONGO_URI, MONGODB_NAME, SECRET_KEY).
+17. Go back to [GitPod](https://www.gitpod.io/) and make sure that you have pushed your requirements.txt and Procfile to the repo.
+18. Return to Heroku and click on "Enable Automatic Deployment".
+19. Select your branch. Branch selected (master).
+20. Click "Deploy Branch"
+21. Once deployment is finished click "View" to launch the new app.
 
-<!-- ### **Local Deployment** -->
-<!-- 1. Navigate to the GitHub [Repository:](https://github.com/RyanSyme/Milestone-2-Visit-Norrtalje) -->
-<!-- 2. Click the **Code** drop down menu. -->
-<!-- 3. Download the ZIP file and unpack locally -->
-<!-- 4. Open a code editor of your choice and open the unzipped file using the code editor. -->
-<!-- 5. Click **Save** and save to your local device -->
+
+### **Local Deployment**
+1. Navigate to the GitHub [Repository:](https://github.com/RyanSyme/url-of-sandwich)
+2. Click the **Code** drop down menu.
+3. Download the ZIP file and unpack locally
+4. Open a code editor of your choice and open the unzipped file using the code editor.
+5. Click **Save** and save to your local device
+6. In order to have a functional app, you will have to create your own MongoDB collection and inserted your "MONGO_URI" and not the one used in the project.
 
 ---
 
