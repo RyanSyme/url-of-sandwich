@@ -5,9 +5,9 @@
 ---
 
 ![Url of Sandwich](static/readme-files/Multishottransparent.png)
-This webpage has been created to showcase the skills I have learned in the Datacentric Developement section of the Code Institute Full Stack Web Developer course; this is the third of four projects that I will be creating for the course.
+This webpage has been created to showcase the skills I have learned in the Datacentric Development  section of the Code Institute Full Stack Web Developer course; this is the third of four projects that I will be creating for the course.
 For this project I have chosen to create a sandwich recipe website using the MongoDB database, Python, Flask and Jinja.
-The reason for this selection is to create a website that users can interact with by joining the website, being able to view other people's creations and adding there own sandwiches to the database.
+The reason for this selection is to create a website that users can interact with by joining the website, being able to view other people's creations and adding their own sandwiches to the database.
 
 ---
 
@@ -73,11 +73,11 @@ you can find a full size PDF of the Wireframes [here](https://bea8e478-4bc6-44df
 #### **Design Differences**
 
 There are some minor differences from the original conception and the final website.
-* Origianlly I planned to have the Login and Sign up in the same place and have only one link in the Nav. I decided it would be cleaner to have a Login section and a sign up section.
+* Originally I planned to have the Login and Sign up in the same place and have only one link in the Nav. I decided it would be cleaner to have a Login section and a sign up section.
 * I made the callout image a rolling carousel to make the home page more interesting and inviting.
 * I changed the search option from a "main ingredient" search to an "any ingredient" search for ease of use for the user.
-* I moved the sandwich description in the "view sandwich" page, from the side of the image to underneath, purely for astetical reasons.
-* I removed the "create a new sandwich" button from the profile page, as I felt it was an unnessasary addition.
+* I moved the sandwich description in the "view sandwich" page, from the side of the image to underneath, purely for aesthetical reasons.
+* I removed the "create a new sandwich" button from the profile page, as I felt it was an unnecessary addition.
 * I changed the database category from "main ingredient" to "category" for ease of use for the user (if a sandwich has only two ingredients, which is the main one?).
 
 ### **styling**
@@ -107,7 +107,7 @@ The Google font Mali had been used exclusively on the website
 
     * *As a First Time Visitor*, I want to access the site across all devices.
     * *As a First Time Visitor*, I want to see other users creations.
-    * *As a First Time Visitor*, I want a a way to search other users creations.
+    * *As a First Time Visitor*, I want a way to search other users creations.
     * *As a First Time Visitor*, I want to be able to sign up as a user.
     * *As a First Time Visitor*, I want to add my own creations.
     * *As a First Time Visitor*, I want a page where I can see my own creations.
@@ -137,7 +137,7 @@ The Google font Mali had been used exclusively on the website
     2. The sandwiches section displays the full database of sandwiches that users have created. Each sandwich has its own card with an image of the sandwich, it's name and prep time. Each card also has view sandwich button to allow the user to see each recipe. There is also a search bar allowing the user to search the sandwiches by ingredient.
     ![Sandwich Cards](static/readme-files/sandwichesscreen.png)
     
-    3. The Login and Sign Up sections take the customer to the related page, allowing the customer to either login or sign up. The pages have links to each other incase the customer has click the wrong one.
+    3. The Login and Sign Up sections take the customer to the related page, allowing the customer to either login or sign up. The pages have links to each other in case the customer has click the wrong one.
     ![Login](static/readme-files/loginscr.png)
     ![Sign Up](static/readme-files/signupscr.png)
     
@@ -225,7 +225,7 @@ All of the following technologies were used to create this website:-
 **First Time Visitor Goals**
 
 * *As a First Time Visitor*, I want to be able to navigate the website simply and easily.
-    *   On opening the website the visitor is met with the callout section which has a button connecting to the sign up page and a sticky nav directing the user to relevent pages
+    *   On opening the website the visitor is met with the callout section which has a button connecting to the sign up page and a sticky nav directing the user to relevant pages
 
 * *As a First Time Visitor*, I want to access the site across all devices.
     *	The website is responsive across all devices
@@ -233,8 +233,8 @@ All of the following technologies were used to create this website:-
 * *As a First Time Visitor*, I want to see other users creations.
     *	The nav has a sandwiches button that links to a page that show all of the sandwiches in the database.
 
-* *As a First Time Visitor*, I want a a way to search other users creations.
-    *	The sandwiches page has a promenent search bar that allows the user to search through the the sandwiches by ingredient.
+* *As a First Time Visitor*, I want a way to search other users creations.
+    *	The sandwiches page has a prominent search bar that allows the user to search through the the sandwiches by ingredient.
 
 * *As a First Time Visitor*, I want to be able to sign up as a user.
     *   There is a sign up link in the nav and also a button under the callout guiding the user to the sign up page.
@@ -275,14 +275,9 @@ All of the following technologies were used to create this website:-
 
 #### *W3 Validators*
 
-*    The HTML was Validted at [W3C Markup Validation Service](https://validator.w3.org/). 
+*    The HTML was Validated at [W3C Markup Validation Service](https://validator.w3.org/). 
 
-<!-- ![HTML Validation](screen) -->
-<!-- ![HTML Validation](screen) -->
-
-*    The CSS was validate at [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
-
-<!-- ![CSS Validation](screen) -->
+*    The CSS was Validated at [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/).
 
 ### **Manual Testing**
 
@@ -313,17 +308,17 @@ All of the following technologies were used to create this website:-
    *    Google Chrome OS
    *    IBM Warp
 
+### Defensive Design Testing
+
+
     
 #### *Issues Found*
 
 *   An issue was found with the carousel and callout text being on the same line on different device sizes, the resizing would make the text too large and the carousel too small.
     *   The issue was resolved with some changes to the css in the media queries and by using the bootstrap grid system.
 
-<!-- *   JSHint found a missing semi-colon in my JavaScript. -->
-    <!-- *   The issue was fixed by adding the semi-colon -->
-
-<!-- *   I was unable to make EmailJS function using the way I had been taught by Code Institute. -->
-    <!-- *   The issue was fixed by using a newer piece of code from the [EmailJS](https://www.emailjs.com/docs/tutorial/creating-contact-form/) website. -->
+*   Originally the minimum number of letters for the sandwich names was set at 5. It became apparent early on that this was an error as one of the worlds most famous sandwiches is a 3 letter Acronym "BLT"
+    *   The minimum letter count on the sandwich name input was changed to 3.
 
 ---
 

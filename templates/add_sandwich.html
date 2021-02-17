@@ -18,8 +18,7 @@
                     <label class="form-label">
                         <i class="fas fa-clipboard-list"></i> Description
                     </label>
-                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5"
-                        required></textarea>
+                    <textarea class="form-control" type="text" id="description" name="description" rows="2" minlength="5" required></textarea>
                 </div>
                 <div class="row m-2">
                     <div class="col-12 col-md-6">
@@ -33,7 +32,7 @@
                                 required>
                                 <option value="" selected>-- Choose a Category --</option>
                                 {% for category in category %}
-                                <option value="{{ category.category }}">{{ category.category }}</option>
+                                    <option value="{{ category.category }}">{{ category.category }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -75,7 +74,6 @@
                     <input class="form-control" type="url" id="image_url" name="image_url">
                 </div>
                 <button type="submit" class="btn btn-reg ml-4 mr-2 my-3 btn-signup">Create Sandwich</button>
-                
             </form>
         </div>
     </div>

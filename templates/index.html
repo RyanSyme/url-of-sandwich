@@ -50,43 +50,43 @@
     </div>
 
     {% if sandwiches|length > 0 %}
-    <div class="row fav-container">
-        <div class="col">
-            <h2 class="favourites text-shadow">Our Latest Sandwiches</h2>
-            <hr>
-        </div>
-    </div>
-    
-    <div class="row card-row">
-
-    {% for sandwich in sandwiches %}
-        <!-- shows default image if no user image used or url fails -->
-        <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
-        <div class="col-md-6 col-lg-4 card-row">
-            <div class="card shadow sandwich-card mt-5">
-                <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image"
-                    onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
-                <div class="card-body">
-                    <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
-                    <p class="card-text">Category: {{ sandwich.category }}</p>
-                    <p class="card-text">{{ sandwich.prep_time }}</p>
-                    <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
-                </div>
-                <div class="col mb-3">
-                    <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">
-                        View Sandwich
-                    </a>
-                </div>
+        <div class="row fav-container">
+            <div class="col">
+                <h2 class="favourites text-shadow">Our Latest Sandwiches</h2>
+                <hr>
             </div>
-            
         </div>
+        
+        <div class="row card-row">
 
-    {% endfor %}
-        </div>
-    {% else %}
-        <div class="container no-results">
-            <h3 class="text-center mt-3">No Sandwiches Found</h3>
-        </div>
+        {% for sandwich in sandwiches %}
+            <!-- shows default image if no user image used or url fails -->
+            <!-- default img on fail credited to: https://stackoverflow.com/questions/7995080/html-if-image-is-not-found -->
+            <div class="col-md-6 col-lg-4 card-row">
+                <div class="card shadow sandwich-card mt-5">
+                    <img src="{{ sandwich.image_url }}" class="card-img-top sandwich-url" alt="Sandwich Image"
+                        onerror="this.onerror=null; this.src='static/Img/Image_by_LuckyLife11_from_Pixabay.jpg'" />
+                    <div class="card-body">
+                        <h4 class="card-title">{{ sandwich.sandwich_name }}</h4>
+                        <p class="card-text">Category: {{ sandwich.category }}</p>
+                        <p class="card-text">{{ sandwich.prep_time }}</p>
+                        <small class="card-text"><em>Created by: {{ sandwich.created_by|upper }}</em></small>
+                    </div>
+                    <div class="col mb-3">
+                        <a href="{{ url_for('view_sandwich', sandwich_id=sandwich._id) }}" class="btn btn-reg">
+                            View Sandwich
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+
+        {% endfor %}
+            </div>
+        {% else %}
+            <div class="container no-results">
+                <h3 class="text-center mt-3">No Sandwiches Found</h3>
+            </div>
     {% endif %}
     
 {% endblock %}

@@ -43,7 +43,7 @@
                         <li class="nav-item mr-3 mb-2">
                             <a class="nav-link text-uppercase" href="{{ url_for('logout') }}">LOG OUT</a>
                         </li>
-                        {% else %}
+                    {% else %}
                         <li class="nav-item mr-3 mb-2">
                             <a class="nav-link text-uppercase" href="{{ url_for('login') }}">LOGIN</a>
                         </li>
@@ -57,7 +57,7 @@
     </header>
 
     <section>
-        <!-- flash messages -->
+        <!-- flash messages section -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}

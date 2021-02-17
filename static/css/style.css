@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mali:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
 
 body {
     overflow-x: hidden;
     margin: 0 !important;
     padding: 0 !important;
-    font-family: 'Mali', cursive;
+    font-family: "Mali", cursive;
     color: #2b2d42;
     background-color: #e6e6e6;
     text-align: center;
@@ -15,7 +15,7 @@ a {
 }
 
 .text-shadow {
-    text-shadow: 2px 2px #A9A9A9;
+    text-shadow: 2px 2px #a9a9a9;
 }
 
 /* =============================== Nav Section =============================== */
@@ -244,14 +244,10 @@ footer {
 }
 
 .instructions-card ul {
-  list-style-type: none;
-  padding: 0;
-  margin-left: 2rem;
+    list-style-type: none;
+    padding: 0;
+    margin-left: 2rem;
 }
-
-/* .ingredients-list {
-    margin-left: 25%;
-} */
 
 /* =============================== Add and Edit Forms ======================== */
 
@@ -263,33 +259,29 @@ footer {
 
 @media screen and (min-width: 1025px) {
     .select-box {
-    margin-left: -15px;
-    margin-bottom: 1rem;
-    width: 120%;
+        margin-left: -15px;
+        margin-bottom: 1rem;
+        width: 120%;
     }
 }
 
 @media screen and (max-width: 768px) {
-
     .hype-container div {
         margin-left: 0;
     }
 
     .view-sandwich-img {
-    height: 60vh;
-    width: 80vw;
+        height: 60vh;
+        width: 80vw;
     }
 
     .sandwich-info {
         text-align: center !important;
         padding-bottom: 1rem;
     }
-
-
 }
 
 @media screen and (max-width: 425px) {
-
     .nav-symbol h3 {
         font-size: 1.5rem;
     }
@@ -307,45 +299,48 @@ footer {
     }
 
     .hype-text {
-    font-size: 1.2rem;
+        font-size: 1.2rem;
     }
 
     .favourites {
-    font-size: 10vw;
+        font-size: 10vw;
     }
 
-    .ml-5, .mx-5 {
-    margin-left: 2rem!important;
+    .ml-5,
+    .mx-5 {
+        margin-left: 2rem !important;
     }
 
-    .mr-5, .mx-5 {
-    margin-right: 1.5rem!important;
+    .mr-5,
+    .mx-5 {
+        margin-right: 1.5rem !important;
     }
 
     .select-box {
-    margin-left: -15px;
-    margin-bottom: 1rem;
-    width: 120%;
+        margin-left: -15px;
+        margin-bottom: 1rem;
+        width: 120%;
     }
 
     .view-sandwich-img {
-    height: 40vh;
-    width: 90vw;
+        height: 40vh;
+        width: 90vw;
     }
 }
 
 @media screen and (max-width: 375px) {
-
     .callout-container {
         height: 20vh !important;
     }
 
-    .ml-5, .mx-5 {
-    margin-left: 0.8rem!important;
+    .ml-5,
+    .mx-5 {
+        margin-left: 0.8rem !important;
     }
 
-    .mr-5, .mx-5 {
-    margin-right: 0.8rem!important;
+    .mr-5,
+    .mx-5 {
+        margin-right: 0.8rem !important;
     }
 
     .fa-5x {
@@ -353,8 +348,8 @@ footer {
     }
 
     .select-box {
-    margin-left: -15px;
-    margin-bottom: 1rem;
-    width: 130%;
+        margin-left: -15px;
+        margin-bottom: 1rem;
+        width: 130%;
     }
 }
