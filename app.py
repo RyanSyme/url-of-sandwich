@@ -224,3 +224,6 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+            # dont forget to change this to false!
+            # dont forget to change this to false!
+            # dont forget to change this to false!
