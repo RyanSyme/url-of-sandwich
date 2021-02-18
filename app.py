@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     sandwiches = list(
-                mongo.db.sandwiches.find().sort( "_id", -1).limit(3))
+                mongo.db.sandwiches.find().sort("_id", -1).limit(3))
     return render_template("index.html", sandwiches=sandwiches)
 
 
@@ -31,11 +31,13 @@ def sandwiches():
     # search bar request
     query = request.args.get("query")
     if query:
-        sandwiches = list(mongo.db.sandwiches.find({"$text": {"$search": query}}))
+        sandwiches = list(
+            mongo.db.sandwiches.find({"$text": {"$search": query}}))
     else:
-    # sort by time created
-        sandwiches = list(mongo.db.sandwiches.find().sort( "_id", -1))
-    return render_template("sandwiches.html", query=query, sandwiches=sandwiches)
+        # sort by time created
+        sandwiches = list(mongo.db.sandwiches.find().sort("_id", -1))
+    return render_template(
+        "sandwiches.html", query=query, sandwiches=sandwiches)
 
 
 @app.route("/view-sandwich/<sandwich_id>")
@@ -82,7 +84,8 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(request.form.get("username")))
+                        flash(
+                            "Welcome, {}".format(request.form.get("username")))
                         return redirect(
                             url_for("profile", username=session["user"]))
             else:
