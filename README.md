@@ -174,6 +174,7 @@ The Google font Mali had been used exclusively on the website
 * The option to have more than one admin.
 * The ability for the user to change password
 * A 'Favourite section showing the users person favourites. 
+* Some defensive programing to ask a user if they are sure that they want to delete a sandwich or not once the delete button has been pressed
 
 ---
 
@@ -312,7 +313,75 @@ All of the following technologies were used to create this website:-
 
 ### Defensive Design Testing
 
+#### Index page
 
+*   Test all links and buttons on Index page:
+    *   All Navbar buttons link to the page expected
+    *   All footer links to social media function as expected
+    *   Buttons on the "latest sandwiches cards direct to expected sandwich pages
+    *   "Get Started" button appears and directs user to Sign Up page if not already signed in
+
+#### Sign Up page
+
+*   Test Sign Up form:
+    *   User cannot create an account without entering a username with less than 5 characters
+    *   Email Address must have an @ symbol
+    *   Password must be letters and/or numbers and must be between 5-15 characters long
+        *   If any of these points fail a message appears informing the user what is needed
+    *   The link switching the user from login to sign up at the bottom of the form functions correctly
+
+#### Login page
+
+*   Test Login functionality:
+    *   User must enter a correct username already on the system
+    *   User must enter the correlating password already on the system
+        *   If either of these points are not achieved a "incorrect/username or password" message flashes
+    *   The link switching the user from login to sign up at the bottom of the form functions correctly
+
+#### Profile page
+
+*   Test buttons and links:
+    *   Once signed in the customer recieves a welcome message with their username so they are aware that they have been signed in
+    *   The Added Sandwich button takes the user to the Add Sandwich form
+    *   The Edit Sandwich button takes the user to the Edit Sandwich form
+    *   The Delete Sandwich button removes the sandwich
+
+#### Add Sandwich page
+
+*   Test Add Sandwich form works:
+    *   The sandwich name must be between 3-50 characters
+    *   The sandwich must have a description
+    *   A category and prep time must be selected
+    *   The form needs at least one ingredient and one instruction
+    *   If no Image url is added or is added incorrectly, a default image is used
+    *   Once a sandwich is created the user is directed to the sandwiches page
+
+#### Edit Sandich page
+
+*   Test Edit Sandwich Form:
+    *   All original content is placed on the form
+    *   Changes can be made to any input as long as the edit complies with the same rule-sets as before
+    *   Save changes button saves the new information and directs the customer to the sandwiches page
+    *   Cancel edit makes no changes and directs the user to the sandwiches page
+
+#### Logout Buttons
+
+*   Test Logout Button:
+    *   Pressing the logout button logs out the user and returns them to the login page
+
+### Admin Testing
+
+#### Admin Profile page
+
+*   Test Admin Profile Page:
+    *   When signed in as admin, the profile page show an Edit Categories button
+    *   The Edit Categories button takes the admin to the Edit Categories page
+
+*   Test Edit Categories Page:
+    *   The Add Category button takes to the Add Category page, where the admin can add a new category using the single input form
+    *   The Edit Category button takes to the Edit Category page, where the admin can edit the name of the category using the single input form
+    *   The Edit Category form has a CAncel button that stops the edit and returns the admin to the categories page
+    *   The Remove CAtegory button removes the category from the database
     
 #### *Issues Found*
 
