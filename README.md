@@ -73,6 +73,7 @@ you can find a full size PDF of the Wireframes [here](https://bea8e478-4bc6-44df
 #### **Design Differences**
 
 There are some minor differences from the original conception and the final website.
+
 * Originally I planned to have the Login and Sign up in the same place and have only one link in the Nav. I decided it would be cleaner to have a Login section and a sign up section.
 * I made the callout image a rolling carousel to make the home page more interesting and inviting.
 * I changed the search option from a "main ingredient" search to an "any ingredient" search for ease of use for the user.
@@ -175,6 +176,7 @@ The Google font Mali had been used exclusively on the website
 * The ability for the user to change password
 * A 'Favourite section showing the users person favourites. 
 * Some defensive programing to ask a user if they are sure that they want to delete a sandwich or not once the delete button has been pressed
+    * This would also be needed for the admin page on the delete category button
 
 ---
 
@@ -311,7 +313,7 @@ All of the following technologies were used to create this website:-
    *    Google Chrome OS
    *    IBM Warp
 
-### Defensive Design Testing
+### **Defensive Design Testing**
 
 #### Index page
 
@@ -433,6 +435,7 @@ All of the following technologies were used to create this website:-
 
 ### **Content**
 
+*	My code was influenced by The Data Centric Development Mini Project lesson from the [Code Institute](https://courses.codeinstitute.net/login) Full Stack Developer Course.
 
 ### **Media**
 
@@ -447,13 +450,9 @@ All of the following technologies were used to create this website:-
 
 ### **Acknowledgements**
 
-*	I received design inspiration from:
+*   I received advice for improving my search bar code from my Code Institute mentor **Oluwafemi Medale**
 
-    *	The Data Centric Development Mini Project lesson from the [Code Institute](https://courses.codeinstitute.net/login) Full Stack Developer Course.
-
-    *   Advice for improving my search bar code from my Code Institute mentor **Oluwafemi Medale**
-
-    *   Additional help to create a default image on sandwich cards is credited to [StackOverflow](https://stackoverflow.com/questions/7995080/html-if-image-is-not-found)
+*   Additional help to create a default image on sandwich cards is credited to [StackOverflow](https://stackoverflow.com/questions/7995080/html-if-image-is-not-found)
 
 *	I received styling inspiration from:
 
