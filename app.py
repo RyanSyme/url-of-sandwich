@@ -21,6 +21,12 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/index")
 def index():
+    """
+        Display index page.
+        Fetch latest three sandwiches data from MongoDB sandwiches collection.
+        Returns:
+        template: index.html.
+    """
     sandwiches = list(
                 mongo.db.sandwiches.find().sort("_id", -1).limit(3))
     return render_template("index.html", sandwiches=sandwiches)
@@ -28,6 +34,13 @@ def index():
 
 @app.route("/sandwiches")
 def sandwiches():
+    """
+        Display sandwiches page.
+        Query database for ingredients data from MongoDB sandwiches collection for search bar.
+        Fetch full list of sandwiches in database
+        Returns:
+        template: sandwiches.html.
+    """
     # search bar request
     query = request.args.get("query")
     if query:
@@ -42,13 +55,26 @@ def sandwiches():
 
 @app.route("/view-sandwich/<sandwich_id>")
 def view_sandwich(sandwich_id):
-    # creates page for individual sandwiches
+    """
+        Display view_sandwich page.
+        Fetch sandwich by database id from MongoDB sandwiches collection.
+        Returns:
+        template: view_sandwich.html.
+    """
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     return render_template("view_sandwich.html", sandwich=sandwich)
 
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
+     """
+        Displays signup page to guest user and allows account creation.
+        Prevents username duplication by checking users.
+        Stores details on MongoDB database in the users collection.
+        Returns:
+        template: redirect to profile.html if successful.
+        template: signup.html if unsuccessful.
+    """
     if request.method == "POST":
         # check if username already in use
         existing_user = mongo.db.users.find_one(
@@ -74,6 +100,14 @@ def signup():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    """
+        Displays login page and allows user to log into account.
+        Checks if the username exists in MongoDB users collection.
+        Informs user if login is successful or not via flash messages.
+        Returns:
+        template: profile.html if login successful.
+        template: login.html if unsuccessful.
+    """
     if request.method == "POST":
         # check if username already in use
         existing_user = mongo.db.users.find_one(
@@ -103,7 +137,13 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    # retreive session user's username from database
+    """
+        Displays profile page, retreives session user's username from database.
+        Checks previously submitted sandwiches by users username.
+        Returns:
+        template: profile.html if login successful.
+        template: login.html if unsuccessful.
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -119,14 +159,28 @@ def profile(username):
 
 @app.route("/logout")
 def logout():
-    # remove session cookies
+    """
+        Removes session cookie.
+        Shows flash message that logout has been successful.
+        Returns:
+        template: login.html.
+    """
     flash("You have been logged out")
+    # removes session cookies
     session.pop("user")
     return redirect(url_for("login"))
 
 
 @app.route("/add-sandwich", methods=["GET", "POST"])
 def add_sandwich():
+    """
+        Allows user to submit a sandwich to the website through a form.
+        Allows form fields to be sent to the MongoDB sandwiches and category collection.
+        Adds a new entry in to the collections.
+        Returns:
+        template: add_sandwich.html
+        template: sandwiches.html after entires.
+    """
     # add form info to database
     if request.method == "POST":
         sandwiches = {
@@ -150,6 +204,14 @@ def add_sandwich():
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
     # edit database record
+    """
+        Allows the user to edit their own submitted sandwiches through a form.
+        Checks the sandwich ID field in MongoDB to fetch the data.
+        Displays all previously entered data of the sandwich.
+        Adds any changes made to the entries once submitted to the MongoDB collection.
+        template: edit_sandwich.html.
+        template: sandwiches.html after entires.
+    """
     if request.method == "POST":
         submit = {
             "sandwich_name": request.form.get("sandwich_name"),
@@ -173,7 +235,12 @@ def edit_sandwich(sandwich_id):
 
 @app.route("/delete-sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
-    # delete sandwich from database
+    """
+        Allows user to delete sandwich.
+        Deletes cocktail from database.
+        Returns:
+        template: redirects to sandwiches.html
+    """
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
     flash("Sandwich Successfully Removed")
     return redirect(url_for("sandwiches"))
@@ -181,14 +248,24 @@ def delete_sandwich(sandwich_id):
 
 @app.route("/category")
 def category():
-    # list categories on category page
+    """
+        Display all categories (for admin only).
+        Fetches a list of all categories in the MongoDB categories collection.
+        Returns:
+        template: categories.html
+    """
     category = list(mongo.db.category.find().sort("category", 1))
     return render_template("category.html", category=category)
 
 
 @app.route("/add-category",  methods=["GET", "POST"])
 def add_category():
-    # add new category
+    """
+        Allows admin to submit a category to the database through a form.
+        Returns:
+        template: add_categories.html
+        template: categories.html after entry
+    """
     if request.method == "POST":
         category = {
             "category": request.form.get("category")
@@ -202,7 +279,14 @@ def add_category():
 
 @app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
 def edit_category(category_id):
-    # edit category
+    """
+        Allows the admin to edit a category through a form.
+        Checks for category ID field in MongoDB to fetch relative data.
+        Fetches changes to database and updates the collection.
+        Checks if the user in session is the admin.
+        template: edit_categories.html
+        template: categories.html after entry
+    """
     if request.method == "POST":
         submit = {
             "category": request.form.get("category")
@@ -217,7 +301,11 @@ def edit_category(category_id):
 
 @app.route("/delete-category/<category_id>")
 def delete_category(category_id):
-    # delete category
+    """
+        Allows admin to delete categories from database.
+        Returns:
+        template: redirects to categories.html
+    """
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("category"))
@@ -226,7 +314,4 @@ def delete_category(category_id):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
-            # dont forget to change this to false!
-            # dont forget to change this to false!
-            # dont forget to change this to false!
+            debug=False)
