@@ -181,8 +181,8 @@ def add_sandwich():
         template: add_sandwich.html
         template: sandwiches.html after entires.
     """
-    # add form info to database
     if request.method == "POST":
+        # add form info to database
         sandwiches = {
             "sandwich_name": request.form.get("sandwich_name"),
             "description": request.form.get("description"),
@@ -203,7 +203,6 @@ def add_sandwich():
 
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
-    # edit database record
     """
         Allows the user to edit their own submitted sandwiches through a form.
         Checks the sandwich ID field in MongoDB to fetch the data.
@@ -213,6 +212,7 @@ def edit_sandwich(sandwich_id):
         template: sandwiches.html after entires.
     """
     if request.method == "POST":
+        # edit database record
         submit = {
             "sandwich_name": request.form.get("sandwich_name"),
             "description": request.form.get("description"),
