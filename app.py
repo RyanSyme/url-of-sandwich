@@ -67,7 +67,7 @@ def view_sandwich(sandwich_id):
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
-     """
+    """
         Displays signup page to guest user and allows account creation.
         Prevents username duplication by checking users.
         Stores details on MongoDB database in the users collection.
