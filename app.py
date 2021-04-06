@@ -35,11 +35,12 @@ def index():
 @app.route("/sandwiches")
 def sandwiches():
     """
-        Display sandwiches page.
-        Query database for ingredients data from MongoDB sandwiches collection for search bar.
-        Fetch full list of sandwiches in database
-        Returns:
-        template: sandwiches.html.
+    Display sandwiches page.
+    Query database for ingredients data from
+    MongoDB sandwiches collection for search bar.
+    Fetch full list of sandwiches in database
+    Returns:
+    template: sandwiches.html.
     """
     # search bar request
     query = request.args.get("query")
@@ -56,10 +57,11 @@ def sandwiches():
 @app.route("/view-sandwich/<sandwich_id>")
 def view_sandwich(sandwich_id):
     """
-        Display view_sandwich page.
-        Fetch sandwich by database id from MongoDB sandwiches collection.
-        Returns:
-        template: view_sandwich.html.
+    Display view_sandwich page.
+    Fetch sandwich by database id from
+    MongoDB sandwiches collection.
+    Returns:
+    template: view_sandwich.html.
     """
     sandwich = mongo.db.sandwiches.find_one({"_id": ObjectId(sandwich_id)})
     return render_template("view_sandwich.html", sandwich=sandwich)
@@ -174,12 +176,13 @@ def logout():
 @app.route("/add-sandwich", methods=["GET", "POST"])
 def add_sandwich():
     """
-        Allows user to submit a sandwich to the website through a form.
-        Allows form fields to be sent to the MongoDB sandwiches and category collection.
-        Adds a new entry in to the collections.
-        Returns:
-        template: add_sandwich.html
-        template: sandwiches.html after entires.
+    Allows user to submit a sandwich to the website through a form.
+    Allows form fields to be sent to the
+    MongoDB sandwiches and category collection.
+    Adds a new entry in to the collections.
+    Returns:
+    template: add_sandwich.html
+    template: sandwiches.html after entires.
     """
     if request.method == "POST":
         # add form info to database
@@ -204,12 +207,13 @@ def add_sandwich():
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
 def edit_sandwich(sandwich_id):
     """
-        Allows the user to edit their own submitted sandwiches through a form.
-        Checks the sandwich ID field in MongoDB to fetch the data.
-        Displays all previously entered data of the sandwich.
-        Adds any changes made to the entries once submitted to the MongoDB collection.
-        template: edit_sandwich.html.
-        template: sandwiches.html after entires.
+    Allows the user to edit their own submitted sandwiches through a form.
+    Checks the sandwich ID field in MongoDB to fetch the data.
+    Displays all previously entered data of the sandwich.
+    Adds any changes made to the entries
+    once submitted to the MongoDB collection.
+    template: edit_sandwich.html.
+    template: sandwiches.html after entires.
     """
     if request.method == "POST":
         # edit database record
