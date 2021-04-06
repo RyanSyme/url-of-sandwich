@@ -22,10 +22,10 @@ mongo = PyMongo(app)
 @app.route("/index")
 def index():
     """
-        Display index page.
-        Fetch latest three sandwiches data from MongoDB sandwiches collection.
-        Returns:
-        template: index.html.
+    Display index page.
+    Fetch latest three sandwiches data from MongoDB sandwiches collection.
+    Returns:
+    template: index.html.
     """
     sandwiches = list(
                 mongo.db.sandwiches.find().sort("_id", -1).limit(3))
@@ -70,12 +70,12 @@ def view_sandwich(sandwich_id):
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     """
-        Displays signup page to guest user and allows account creation.
-        Prevents username duplication by checking users.
-        Stores details on MongoDB database in the users collection.
-        Returns:
-        template: redirect to profile.html if successful.
-        template: signup.html if unsuccessful.
+    Displays signup page to guest user and allows account creation.
+    Prevents username duplication by checking users.
+    Stores details on MongoDB database in the users collection.
+    Returns:
+    template: redirect to profile.html if successful.
+    template: signup.html if unsuccessful.
     """
     if request.method == "POST":
         # check if username already in use
@@ -103,12 +103,12 @@ def signup():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
-        Displays login page and allows user to log into account.
-        Checks if the username exists in MongoDB users collection.
-        Informs user if login is successful or not via flash messages.
-        Returns:
-        template: profile.html if login successful.
-        template: login.html if unsuccessful.
+    Displays login page and allows user to log into account.
+    Checks if the username exists in MongoDB users collection.
+    Informs user if login is successful or not via flash messages.
+    Returns:
+    template: profile.html if login successful.
+    template: login.html if unsuccessful.
     """
     if request.method == "POST":
         # check if username already in use
@@ -140,11 +140,11 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-        Displays profile page, retreives session user's username from database.
-        Checks previously submitted sandwiches by users username.
-        Returns:
-        template: profile.html if login successful.
-        template: login.html if unsuccessful.
+    Displays profile page, retreives session user's username from database.
+    Checks previously submitted sandwiches by users username.
+    Returns:
+    template: profile.html if login successful.
+    template: login.html if unsuccessful.
     """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -162,10 +162,10 @@ def profile(username):
 @app.route("/logout")
 def logout():
     """
-        Removes session cookie.
-        Shows flash message that logout has been successful.
-        Returns:
-        template: login.html.
+    Removes session cookie.
+    Shows flash message that logout has been successful.
+    Returns:
+    template: login.html.
     """
     flash("You have been logged out")
     # removes session cookies
@@ -240,10 +240,10 @@ def edit_sandwich(sandwich_id):
 @app.route("/delete-sandwich/<sandwich_id>")
 def delete_sandwich(sandwich_id):
     """
-        Allows user to delete sandwich.
-        Deletes cocktail from database.
-        Returns:
-        template: redirects to sandwiches.html
+    Allows user to delete sandwich.
+    Deletes cocktail from database.
+    Returns:
+    template: redirects to sandwiches.html
     """
     mongo.db.sandwiches.remove({"_id": ObjectId(sandwich_id)})
     flash("Sandwich Successfully Removed")
@@ -253,10 +253,10 @@ def delete_sandwich(sandwich_id):
 @app.route("/category")
 def category():
     """
-        Display all categories (for admin only).
-        Fetches a list of all categories in the MongoDB categories collection.
-        Returns:
-        template: categories.html
+    Display all categories (for admin only).
+    Fetches a list of all categories in the MongoDB categories collection.
+    Returns:
+    template: categories.html
     """
     category = list(mongo.db.category.find().sort("category", 1))
     return render_template("category.html", category=category)
@@ -265,10 +265,10 @@ def category():
 @app.route("/add-category",  methods=["GET", "POST"])
 def add_category():
     """
-        Allows admin to submit a category to the database through a form.
-        Returns:
-        template: add_categories.html
-        template: categories.html after entry
+    Allows admin to submit a category to the database through a form.
+    Returns:
+    template: add_categories.html
+    template: categories.html after entry
     """
     if request.method == "POST":
         category = {
@@ -284,12 +284,12 @@ def add_category():
 @app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
 def edit_category(category_id):
     """
-        Allows the admin to edit a category through a form.
-        Checks for category ID field in MongoDB to fetch relative data.
-        Fetches changes to database and updates the collection.
-        Checks if the user in session is the admin.
-        template: edit_categories.html
-        template: categories.html after entry
+    Allows the admin to edit a category through a form.
+    Checks for category ID field in MongoDB to fetch relative data.
+    Fetches changes to database and updates the collection.
+    Checks if the user in session is the admin.
+    template: edit_categories.html
+    template: categories.html after entry
     """
     if request.method == "POST":
         submit = {
@@ -306,9 +306,9 @@ def edit_category(category_id):
 @app.route("/delete-category/<category_id>")
 def delete_category(category_id):
     """
-        Allows admin to delete categories from database.
-        Returns:
-        template: redirects to categories.html
+    Allows admin to delete categories from database.
+    Returns:
+    template: redirects to categories.html
     """
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
