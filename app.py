@@ -184,24 +184,28 @@ def add_sandwich():
     template: add_sandwich.html
     template: sandwiches.html after entires.
     """
-    if request.method == "POST":
-        # add form info to database
-        sandwiches = {
-            "sandwich_name": request.form.get("sandwich_name"),
-            "description": request.form.get("description"),
-            "category": request.form.get("category"),
-            "prep_time": request.form.get("prep_time"),
-            "ingredients": request.form.get("ingredients"),
-            "instructions": request.form.get("instructions"),
-            "image_url": request.form.get("image_url"),
-            "created_by": session["user"]
-        }
-        mongo.db.sandwiches.insert_one(sandwiches)
-        flash("Sandwich Successfully Added")
-        return redirect(url_for("sandwiches"))
+    user = session.get("user").lower()
+    if user is not None:
+        if request.method == "POST":
+            # add form info to database
+            sandwiches = {
+                "sandwich_name": request.form.get("sandwich_name"),
+                "description": request.form.get("description"),
+                "category": request.form.get("category"),
+                "prep_time": request.form.get("prep_time"),
+                "ingredients": request.form.get("ingredients"),
+                "instructions": request.form.get("instructions"),
+                "image_url": request.form.get("image_url"),
+                "created_by": session["user"]
+            }
+            mongo.db.sandwiches.insert_one(sandwiches)
+            flash("Sandwich Successfully Added")
+            return redirect(url_for("sandwiches"))
 
-    category = mongo.db.category.find().sort("category", 1)
-    return render_template("add_sandwich.html", category=category)
+        category = mongo.db.category.find().sort("category", 1)
+        return render_template("add_sandwich.html", category=category)
+    else:
+        return render_template("403.html")
 
 
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
@@ -270,19 +274,15 @@ def add_category():
     template: add_categories.html
     template: categories.html after entry
     """
-    user = session.get("user").lower()
-    if user is not None:
-        if request.method == "POST":
-            category = {
-                "category": request.form.get("category")
-            }
-            mongo.db.category.insert_one(category)
-            flash("New Category Added")
-            return redirect(url_for("category"))
+    if request.method == "POST":
+        category = {
+            "category": request.form.get("category")
+        }
+        mongo.db.category.insert_one(category)
+        flash("New Category Added")
+        return redirect(url_for("category"))
 
-        return render_template("add_category.html")
-    else:
-        return render_template("403.html")
+    return render_template("add_category.html")
 
 
 @app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
