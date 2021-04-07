@@ -184,28 +184,24 @@ def add_sandwich():
     template: add_sandwich.html
     template: sandwiches.html after entires.
     """
-    user = session.get("user").lower()
-    if user is not None:
-        if request.method == "POST":
-            # add form info to database
-            sandwiches = {
-                "sandwich_name": request.form.get("sandwich_name"),
-                "description": request.form.get("description"),
-                "category": request.form.get("category"),
-                "prep_time": request.form.get("prep_time"),
-                "ingredients": request.form.get("ingredients"),
-                "instructions": request.form.get("instructions"),
-                "image_url": request.form.get("image_url"),
-                "created_by": session["user"]
-            }
-            mongo.db.sandwiches.insert_one(sandwiches)
-            flash("Sandwich Successfully Added")
-            return redirect(url_for("sandwiches"))
+    if request.method == "POST":
+        # add form info to database
+        sandwiches = {
+            "sandwich_name": request.form.get("sandwich_name"),
+            "description": request.form.get("description"),
+            "category": request.form.get("category"),
+            "prep_time": request.form.get("prep_time"),
+            "ingredients": request.form.get("ingredients"),
+            "instructions": request.form.get("instructions"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"]
+        }
+        mongo.db.sandwiches.insert_one(sandwiches)
+        flash("Sandwich Successfully Added")
+        return redirect(url_for("sandwiches"))
 
-        category = mongo.db.category.find().sort("category", 1)
-        return render_template("add_sandwich.html", category=category)
-    else:
-        return render_template("403.html")
+    category = mongo.db.category.find().sort("category", 1)
+    return render_template("add_sandwich.html", category=category)
 
 
 @app.route("/edit-sandwich/<sandwich_id>", methods=["GET", "POST"])
@@ -317,22 +313,6 @@ def delete_category(category_id):
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("category"))
-
-
-# Error handlers from flask documentation
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
-
-
-@app.errorhandler(403)
-def access_denied(e):
-    return render_template('403.html'), 403
-
-
-@app.errorhandler(500)
-def internal_server_error(e):
-    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
