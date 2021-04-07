@@ -34,7 +34,7 @@
                         <div class="col">
                             <select class="form-select select-box" id="category" name="category" aria-label="form-select"
                                 required>
-                                <option value="" selected>-- Choose a Category --</option>
+                                <option value="">-- Choose a Category --</option>
                                 {% for category in category %}
                                     {% if category.category == sandwich.category %}
                                         <option value="{{ category.category }}" selected>{{ category.category }}</option>

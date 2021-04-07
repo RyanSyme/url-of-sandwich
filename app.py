@@ -270,15 +270,19 @@ def add_category():
     template: add_categories.html
     template: categories.html after entry
     """
-    if request.method == "POST":
-        category = {
-            "category": request.form.get("category")
-        }
-        mongo.db.category.insert_one(category)
-        flash("New Category Added")
-        return redirect(url_for("category"))
+    user = session.get("user").lower()
+    if user is not None:
+        if request.method == "POST":
+            category = {
+                "category": request.form.get("category")
+            }
+            mongo.db.category.insert_one(category)
+            flash("New Category Added")
+            return redirect(url_for("category"))
 
-    return render_template("add_category.html")
+        return render_template("add_category.html")
+    else:
+        return render_template("403.html")
 
 
 @app.route("/edit-category/<category_id>",  methods=["GET", "POST"])
@@ -313,6 +317,22 @@ def delete_category(category_id):
     mongo.db.category.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("category"))
+
+
+# Error handlers from flask documentation
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+@app.errorhandler(403)
+def access_denied(e):
+    return render_template('403.html'), 403
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":
