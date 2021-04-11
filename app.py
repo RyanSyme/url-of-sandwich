@@ -184,6 +184,8 @@ def add_sandwich():
     template: add_sandwich.html
     template: sandwiches.html after entires.
     """
+    if 'user' not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         # add form info to database
         sandwiches = {
@@ -215,6 +217,8 @@ def edit_sandwich(sandwich_id):
     template: edit_sandwich.html.
     template: sandwiches.html after entires.
     """
+    if 'user' not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         # edit database record
         submit = {
@@ -270,6 +274,8 @@ def add_category():
     template: add_categories.html
     template: categories.html after entry
     """
+    if 'user' not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         category = {
             "category": request.form.get("category")
@@ -291,6 +297,8 @@ def edit_category(category_id):
     template: edit_categories.html
     template: categories.html after entry
     """
+    if 'user' not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         submit = {
             "category": request.form.get("category")
