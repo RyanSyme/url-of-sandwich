@@ -185,6 +185,7 @@ def add_sandwich():
     template: sandwiches.html after entires.
     """
     if 'user' not in session:
+        flash("Please sign in to add a sandwich")
         return redirect(url_for("login"))
     if request.method == "POST":
         # add form info to database
@@ -218,6 +219,7 @@ def edit_sandwich(sandwich_id):
     template: sandwiches.html after entires.
     """
     if 'user' not in session:
+        flash("Please sign in to edit a sandwich")
         return redirect(url_for("login"))
     if request.method == "POST":
         # edit database record
@@ -275,6 +277,7 @@ def add_category():
     template: categories.html after entry
     """
     if 'user' not in session:
+        flash("Please sign in to add a category")
         return redirect(url_for("login"))
     if request.method == "POST":
         category = {
@@ -298,6 +301,7 @@ def edit_category(category_id):
     template: categories.html after entry
     """
     if 'user' not in session:
+        flash("Please sign in to edit a category")
         return redirect(url_for("login"))
     if request.method == "POST":
         submit = {
